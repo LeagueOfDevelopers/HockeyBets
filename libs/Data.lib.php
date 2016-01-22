@@ -142,20 +142,34 @@
 				$id = intval($id);
 				$query = $this->db->query("SELECT * FROM `users` WHERE `id` = $id");
 				$idfollow = $query->fetch()->id_follow;
+				if($idfollow > 0){
 
-				$query2 = $this->db->query("SELECT * FROM `follow` WHERE `id` = $idfollow");
+					$query2 = $this->db->query("SELECT * FROM `follow` WHERE `id` = $idfollow");
 
-				$today = date('Y-m-d');
-				$datefinish = $query2->fetch()->data_finish;
-				if($datefinish >= $today){
-					$query3 = $this->db->query("SELECT * FROM `news`");
-					$return = "";
-					while($result = $query3->fetch()){
-						$return .= "<tr><td>{$result->title}</td><td>{$result->text}</td>
+					$today = date('Y-m-d');
+					$datefinish = $query2->fetch()->data_finish;
+					if($datefinish >= $today){
+						$query3 = $this->db->query("SELECT * FROM `news`");
+						$return = "";
+						while($result = $query3->fetch()){
+							$return .= "<tr><td>{$result->title}</td><td>{$result->text}</td>
 			             <td>{$result->date}</td><br/>";
-					}
+						}
 
-					return $return;
+						return $return;
+					}
+					else{
+						$query3 = $this->db->query("SELECT * FROM `news` WHERE `status`='general'");
+						$return = "";
+						while($result = $query3->fetch()){
+							$return .= "<tr><td>{$result->title}</td><td>{$result->text}</td>
+			             <td>{$result->date}</td><br/>";
+						}
+
+						echo "Ваша подписка закончилась, если хотите топовые ставки, обновите подписку";
+						//нужно будет сылку на обновление подписки
+						return $return;
+					}
 				}
 				else{
 					$query3 = $this->db->query("SELECT * FROM `news` WHERE `status`='general'");
@@ -165,14 +179,28 @@
 			             <td>{$result->date}</td><br/>";
 					}
 
+					echo "Вы еще не оформили подписку? Тогда скорее окунитесь в мир топовых ставок!";
+					//нужно будет сылку на обновление подписки
 					return $return;
 
 				}
 
 			}
+
+
+
 		    /**
-		    * Новости (выборка данных)
+		    * Работа с подпиской
 		    **/
+		   public function  follow($id){
+			   $id = intval($id);
+			   $query = $this->db->query("SELECT * FROM `users` WHERE `id` = $id");
+			   $idfollow = $query->fetch()->id_follow;
+			   if($idfollow=0){
+
+			   }
+
+		   }
 
 
 
@@ -189,7 +217,7 @@
 			
 		   }
 		   /**
-		    * Профиль пользователя
+		    * Редактирование профиля пользователя
 		    * */ 
 		    public function editProfile($data){
 		    	$id = intval($data['id']);	

@@ -27,4 +27,5 @@
 		<input type="hidden" name="id" value="<?php echo $id;?>">
 	</p>
  <button type="submit" class="pure-button pure-button-primary" name="profile">Сменить профиль</button>
+
 </form>

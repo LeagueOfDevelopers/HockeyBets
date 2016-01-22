@@ -32,6 +32,10 @@ class Route {
 				   exit("Произошла ошибка при активации акаунта! Пожалуйста, обратитесь к Администрации сайта.");	
 				 }
 				break;
+
+				case "succes":
+					self::location($stringurl, 3);
+				break;
 				
 					
 			}
@@ -52,7 +56,10 @@ class Route {
 				break;
 				case "recover":
 					return "recover";
-			   break;				
+			   break;
+				case "follow":
+					return "follow";
+					break;
 				case "logout":
 					self::location($stringurl, 1);
 					$data->logout();
