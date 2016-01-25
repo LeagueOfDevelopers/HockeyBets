@@ -22,54 +22,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.tpl.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tmp/main.tpl.php">
+      <file leaf-file-name="success.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pay/success.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33962265">
-              <caret line="72" column="54" selection-start-line="72" selection-start-column="54" selection-end-line="72" selection-end-column="54" />
-              <folding>
-                <marker date="1453494009893" expanded="true" signature="909:918" placeholder="..." />
-                <marker date="1453494009893" expanded="true" signature="1061:1072" placeholder="..." />
-                <marker date="1453494009893" expanded="true" signature="1326:1335" placeholder="..." />
-                <marker date="1453494009893" expanded="true" signature="1503:1514" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profile.tpl.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tmp/profile.tpl.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.4716983">
-              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+            <state vertical-scroll-proportion="-2.9615386">
+              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Data.lib.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Data.lib.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/libs/Data.lib.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33962265">
-              <caret line="199" column="0" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
+            <state vertical-scroll-proportion="4.3771043">
+              <caret line="281" column="95" selection-start-line="281" selection-start-column="95" selection-end-line="281" selection-end-column="95" />
               <folding>
-                <marker date="1453496489405" expanded="true" signature="1011:1164" placeholder="INSERT INTO ..." />
-                <marker date="1453496489405" expanded="true" signature="2425:2503" placeholder="SELECT `id`,..." />
-                <marker date="1453496489405" expanded="true" signature="3164:3217" placeholder="SELECT `emai..." />
-                <marker date="1453496489405" expanded="true" signature="3560:3581" placeholder="SELECT * FRO..." />
-                <marker date="1453496489405" expanded="true" signature="3659:3845" placeholder="..." />
-                <marker date="1453496489405" expanded="true" signature="4011:4058" placeholder="SELECT `id` ..." />
-                <marker date="1453496489405" expanded="true" signature="5104:5139" placeholder="SELECT * FRO..." />
-                <marker date="1453496489405" expanded="true" signature="5247:5283" placeholder="SELECT * FRO..." />
-                <marker date="1453496489405" expanded="true" signature="5442:5462" placeholder="SELECT * FRO..." />
-                <marker date="1453496489405" expanded="true" signature="5549:5644" placeholder="..." />
-                <marker date="1453496489405" expanded="true" signature="5731:5776" placeholder="SELECT * FRO..." />
-                <marker date="1453496489405" expanded="true" signature="5863:5958" placeholder="..." />
-                <marker date="1453496489405" expanded="true" signature="6185:6230" placeholder="SELECT * FRO..." />
-                <marker date="1453496489405" expanded="true" signature="6314:6409" placeholder="..." />
-                <marker date="1453496489405" expanded="true" signature="6733:6768" placeholder="SELECT * FRO..." />
-                <marker date="1453496489405" expanded="true" signature="7030:7065" placeholder="SELECT * FRO..." />
-                <marker date="1453496489405" expanded="true" signature="7303:7347" placeholder="SELECT `pass..." />
+                <marker date="1453682417625" expanded="true" signature="1011:1164" placeholder="INSERT INTO ..." />
+                <marker date="1453682417625" expanded="true" signature="2425:2503" placeholder="SELECT `id`,..." />
+                <marker date="1453682417625" expanded="true" signature="3164:3217" placeholder="SELECT `emai..." />
+                <marker date="1453682417625" expanded="true" signature="3560:3581" placeholder="SELECT * FRO..." />
+                <marker date="1453682417625" expanded="true" signature="3659:3845" placeholder="..." />
+                <marker date="1453682417625" expanded="true" signature="4011:4058" placeholder="SELECT `id` ..." />
+                <marker date="1453682417625" expanded="true" signature="5104:5139" placeholder="SELECT * FRO..." />
+                <marker date="1453682417625" expanded="true" signature="5247:5283" placeholder="SELECT * FRO..." />
+                <marker date="1453682417625" expanded="true" signature="5442:5462" placeholder="SELECT * FRO..." />
+                <marker date="1453682417625" expanded="true" signature="5549:5644" placeholder="..." />
+                <marker date="1453682417625" expanded="true" signature="5731:5776" placeholder="SELECT * FRO..." />
+                <marker date="1453682417625" expanded="true" signature="5863:5958" placeholder="..." />
+                <marker date="1453682417625" expanded="true" signature="6185:6230" placeholder="SELECT * FRO..." />
+                <marker date="1453682417625" expanded="true" signature="6314:6409" placeholder="..." />
+                <marker date="1453682417625" expanded="true" signature="6733:6768" placeholder="SELECT * FRO..." />
+                <marker date="1453682417625" expanded="true" signature="6964:7000" placeholder="SELECT * FRO..." />
+                <marker date="1453682417625" expanded="true" signature="8247:8394" placeholder="INSERT INTO ..." />
+                <marker date="1453682417625" expanded="true" signature="8572:8719" placeholder="INSERT INTO ..." />
+                <marker date="1453682417625" expanded="true" signature="8898:9045" placeholder="INSERT INTO ..." />
+                <marker date="1453682417625" expanded="true" signature="9236:9277" placeholder="SELECT * FRO..." />
+                <marker date="1453682417625" expanded="true" signature="9672:9707" placeholder="SELECT * FRO..." />
+                <marker date="1453682417625" expanded="true" signature="9945:9989" placeholder="SELECT `pass..." />
               </folding>
             </state>
           </provider>
@@ -78,19 +68,64 @@
       <file leaf-file-name="follow.tpl.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tmp/follow.tpl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.9230769">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state vertical-scroll-proportion="-1.3076923">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="80" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Route.lib.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Route.lib.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/Route.lib.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65824914">
-              <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+            <state vertical-scroll-proportion="-4.4905663">
+              <caret line="41" column="124" selection-start-line="41" selection-start-column="124" selection-end-line="41" selection-end-column="124" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sign.tpl.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tmp/sign.tpl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.9230769">
+              <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profile.tpl.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tmp/profile.tpl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.423077">
+              <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.tpl.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tmp/main.tpl.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.8846154">
+              <caret line="72" column="54" selection-start-line="72" selection-start-column="54" selection-end-line="72" selection-end-column="54" />
+              <folding>
+                <marker date="1453494009893" expanded="true" signature="909:918" placeholder="..." />
+                <marker date="1453494009893" expanded="true" signature="1061:1072" placeholder="..." />
+                <marker date="1453494009893" expanded="true" signature="1326:1335" placeholder="..." />
+                <marker date="1453494009893" expanded="true" signature="1503:1514" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,9 +140,15 @@
       <list>
         <option value="$PROJECT_DIR$/tmp/main.tpl.php" />
         <option value="$PROJECT_DIR$/tmp/profile.tpl.php" />
-        <option value="$PROJECT_DIR$/libs/Data.lib.php" />
+        <option value="$PROJECT_DIR$/tmp/success.tpl.php" />
+        <option value="$PROJECT_DIR$/tmp/result.tpl.php" />
+        <option value="$PROJECT_DIR$/tmp/fail.tpl.php" />
+        <option value="$PROJECT_DIR$/pay/success.php" />
+        <option value="$PROJECT_DIR$/pay/fail.php" />
+        <option value="$PROJECT_DIR$/libs/Tmp.lib.php" />
         <option value="$PROJECT_DIR$/tmp/follow.tpl.php" />
         <option value="$PROJECT_DIR$/libs/Route.lib.php" />
+        <option value="$PROJECT_DIR$/libs/Data.lib.php" />
       </list>
     </option>
   </component>
@@ -117,6 +158,9 @@
   </component>
   <component name="NamedScopeManager">
     <order />
+  </component>
+  <component name="PhpServers">
+    <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
@@ -148,6 +192,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -191,19 +236,103 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="tmp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="captcha" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hockeybets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hockeybets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hockeybets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hockeybets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="libs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hockeybets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hockeybets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="inc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FullScreen" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\hockeybets" />
+      <recent name="C:\xampp\htdocs\hockeybets\tmp" />
+      <recent name="C:\xampp\htdocs\hockeybets\libs" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
+      <method />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="c68e5708-5fc5-4e3b-938a-607e0e0ec84c" name="Default" comment="" />
@@ -227,15 +356,23 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288889" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -247,43 +384,136 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/libs/Data.lib.php">
+    <entry file="file://$PROJECT_DIR$/libs/Route.lib.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33962265">
-          <caret line="199" column="0" selection-start-line="199" selection-start-column="0" selection-end-line="199" selection-end-column="0" />
-          <folding>
-            <marker date="1453496489405" expanded="true" signature="1011:1164" placeholder="INSERT INTO ..." />
-            <marker date="1453496489405" expanded="true" signature="2425:2503" placeholder="SELECT `id`,..." />
-            <marker date="1453496489405" expanded="true" signature="3164:3217" placeholder="SELECT `emai..." />
-            <marker date="1453496489405" expanded="true" signature="3560:3581" placeholder="SELECT * FRO..." />
-            <marker date="1453496489405" expanded="true" signature="3659:3845" placeholder="..." />
-            <marker date="1453496489405" expanded="true" signature="4011:4058" placeholder="SELECT `id` ..." />
-            <marker date="1453496489405" expanded="true" signature="5104:5139" placeholder="SELECT * FRO..." />
-            <marker date="1453496489405" expanded="true" signature="5247:5283" placeholder="SELECT * FRO..." />
-            <marker date="1453496489405" expanded="true" signature="5442:5462" placeholder="SELECT * FRO..." />
-            <marker date="1453496489405" expanded="true" signature="5549:5644" placeholder="..." />
-            <marker date="1453496489405" expanded="true" signature="5731:5776" placeholder="SELECT * FRO..." />
-            <marker date="1453496489405" expanded="true" signature="5863:5958" placeholder="..." />
-            <marker date="1453496489405" expanded="true" signature="6185:6230" placeholder="SELECT * FRO..." />
-            <marker date="1453496489405" expanded="true" signature="6314:6409" placeholder="..." />
-            <marker date="1453496489405" expanded="true" signature="6733:6768" placeholder="SELECT * FRO..." />
-            <marker date="1453496489405" expanded="true" signature="7030:7065" placeholder="SELECT * FRO..." />
-            <marker date="1453496489405" expanded="true" signature="7303:7347" placeholder="SELECT `pass..." />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="0" selection-start-line="38" selection-start-column="36" selection-end-line="51" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/follow.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/Route.lib.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/follow.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/news.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2692308">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DIa0.191/demo2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.014492754">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pay/fail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2692308">
+          <caret line="5" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pay/success.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.9615386">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pay/result.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.923077">
+          <caret line="39" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/Tmp.lib.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0273752">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/Connect.lib.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2190016">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/Error.lib.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/Validate.lib.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.012882448">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/Mail.lib.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tmp/profile.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.4716983">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        <state vertical-scroll-proportion="-12.423077">
+          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/sign.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9230769">
+          <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tmp/main.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33962265">
+        <state vertical-scroll-proportion="-5.8846154">
           <caret line="72" column="54" selection-start-line="72" selection-start-column="54" selection-end-line="72" selection-end-column="54" />
           <folding>
             <marker date="1453494009893" expanded="true" signature="909:918" placeholder="..." />
@@ -294,19 +524,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/inc/mzcoding.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tmp/follow.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="80" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/Route.lib.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65824914">
-          <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+        <state vertical-scroll-proportion="-4.4905663">
+          <caret line="41" column="124" selection-start-line="41" selection-start-column="124" selection-end-line="41" selection-end-column="124" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/Data.lib.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.3771043">
+          <caret line="281" column="95" selection-start-line="281" selection-start-column="95" selection-end-line="281" selection-end-column="95" />
+          <folding>
+            <marker date="1453682417625" expanded="true" signature="1011:1164" placeholder="INSERT INTO ..." />
+            <marker date="1453682417625" expanded="true" signature="2425:2503" placeholder="SELECT `id`,..." />
+            <marker date="1453682417625" expanded="true" signature="3164:3217" placeholder="SELECT `emai..." />
+            <marker date="1453682417625" expanded="true" signature="3560:3581" placeholder="SELECT * FRO..." />
+            <marker date="1453682417625" expanded="true" signature="3659:3845" placeholder="..." />
+            <marker date="1453682417625" expanded="true" signature="4011:4058" placeholder="SELECT `id` ..." />
+            <marker date="1453682417625" expanded="true" signature="5104:5139" placeholder="SELECT * FRO..." />
+            <marker date="1453682417625" expanded="true" signature="5247:5283" placeholder="SELECT * FRO..." />
+            <marker date="1453682417625" expanded="true" signature="5442:5462" placeholder="SELECT * FRO..." />
+            <marker date="1453682417625" expanded="true" signature="5549:5644" placeholder="..." />
+            <marker date="1453682417625" expanded="true" signature="5731:5776" placeholder="SELECT * FRO..." />
+            <marker date="1453682417625" expanded="true" signature="5863:5958" placeholder="..." />
+            <marker date="1453682417625" expanded="true" signature="6185:6230" placeholder="SELECT * FRO..." />
+            <marker date="1453682417625" expanded="true" signature="6314:6409" placeholder="..." />
+            <marker date="1453682417625" expanded="true" signature="6733:6768" placeholder="SELECT * FRO..." />
+            <marker date="1453682417625" expanded="true" signature="6964:7000" placeholder="SELECT * FRO..." />
+            <marker date="1453682417625" expanded="true" signature="8247:8394" placeholder="INSERT INTO ..." />
+            <marker date="1453682417625" expanded="true" signature="8572:8719" placeholder="INSERT INTO ..." />
+            <marker date="1453682417625" expanded="true" signature="8898:9045" placeholder="INSERT INTO ..." />
+            <marker date="1453682417625" expanded="true" signature="9236:9277" placeholder="SELECT * FRO..." />
+            <marker date="1453682417625" expanded="true" signature="9672:9707" placeholder="SELECT * FRO..." />
+            <marker date="1453682417625" expanded="true" signature="9945:9989" placeholder="SELECT `pass..." />
+          </folding>
         </state>
       </provider>
     </entry>

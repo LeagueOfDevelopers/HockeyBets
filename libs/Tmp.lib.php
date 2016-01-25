@@ -1,9 +1,5 @@
 <?php
-/**
- * @author Станислав Бойко 
- * @link http://mzcoding.com
- * @desc Template class
- */
+
 class Tmp {
   public $ext;
   private $variables = array();

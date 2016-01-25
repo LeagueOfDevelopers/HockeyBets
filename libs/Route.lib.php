@@ -6,13 +6,14 @@ class Route {
    public function __construct(){
        self::$tmp = new tmp();   
        self::dispatcher();   
-	   self::data(); 
+	   self::data();
+
 	}
    /**
     * Роутирование данных
     * */
    public static function dispatcher(){
-	   //СОздаю переменную, которую если что я использовал вместо HTTP_PATH
+	   //Создаю переменную, которую если что я использовал вместо HTTP_PATH
 	   $stringurl="http://hockeybets/";
      if(isset($_GET['route']) && !empty($_GET['route'])){
      	$route = explode("/", strip_tags($_GET['route']));
@@ -33,8 +34,107 @@ class Route {
 				 }
 				break;
 
-				case "succes":
-					self::location($stringurl, 3);
+				case "follow":
+					$result = intval($route[1]);
+
+					if($result == 1){
+						self::location($stringurl, 5);
+						echo "Оплата товара произошла успешно. Вы будете перенаправлены на главную страницу через 5 секунд";
+
+						$iduser = ($_SESSION['user']['id']) ? $_SESSION['user']['id'] : $_COOKIE['user_id'];
+						$data->activatefollow($iduser);
+
+
+
+						// регистрационная информация (пароль #1)
+						// registration info (password #1)
+						$mrh_pass1 = "password_1";
+
+						// чтение параметров
+						// read parameters
+						$out_summ = $_REQUEST["OutSum"];
+						$inv_id = $_REQUEST["InvId"];
+						$crc = $_REQUEST["SignatureValue"];
+
+						$crc = strtoupper($crc);
+
+						$my_crc = strtoupper(md5("$out_summ:$inv_id:$mrh_pass1"));
+
+						// проверка корректности подписи
+						// check signature
+						if ($my_crc != $crc)
+						{
+							echo "bad sign\n";
+							exit();
+						}
+
+						// проверка наличия номера счета в истории операций
+						// check of number of the order info in history of operations
+						$f=@fopen("order.txt","r+") or die("error");
+
+						while(!feof($f))
+						{
+							$str=fgets($f);
+
+							$str_exp = explode(";", $str);
+							if ($str_exp[0]=="order_num :$inv_id")
+							{
+								echo "Операция прошла успешно\n";
+								echo "Operation of payment is successfully completed\n";
+							}
+						}
+						fclose($f);
+
+						exit();
+					}
+
+					if($result == 2){
+						self::location($stringurl, 5);
+						echo "Вы отказались от оплаты.Вы будете перекинуты на главную страницу через 5 секунд";
+						exit();
+					}
+
+					if($result == 3){
+
+						// регистрационная информация (пароль #2)
+						// registration info (password #2)
+						$mrh_pass2 = "password_2";
+
+						//установка текущего времени
+						//current date
+						$tm=getdate(time()+9*3600);
+						$date="$tm[year]-$tm[mon]-$tm[mday] $tm[hours]:$tm[minutes]:$tm[seconds]";
+
+						// чтение параметров
+						// read parameters
+						$out_summ = $_REQUEST["OutSum"];
+						$inv_id = $_REQUEST["InvId"];
+						$crc = $_REQUEST["SignatureValue"];
+
+						$crc = strtoupper($crc);
+
+						$my_crc = strtoupper(md5("$out_summ:$inv_id:$mrh_pass2"));
+
+						// проверка корректности подписи
+						// check signature
+						if ($my_crc !=$crc)
+						{
+							self::location($stringurl, 5);
+							echo "bad sign\n";
+							exit();
+						}
+
+						// признак успешно проведенной операции
+						// success
+						echo "OK$inv_id\n";
+
+						// запись в файл информации о проведенной операции
+						// save order info to file
+						$f=@fopen("order.txt","a+") or
+						die("error");
+						fputs($f,"order_num :$inv_id;Summ :$out_summ;Date :$date\n");
+						fclose($f);
+					}
 				break;
 				
 					
@@ -104,6 +204,10 @@ class Route {
 			}else{
 				echo "<div class='error'>Профиль успешно изменен!</div>";
 			}
+		}
+		if(isset($_POST['pay'])) {
+			$data->createfollow($_POST['myfollow'], $_POST['id']);
+			exit($data->button($_POST['myfollow']));
 		}
    	 }
 	 

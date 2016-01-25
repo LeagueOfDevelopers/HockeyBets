@@ -196,12 +196,91 @@
 			   $id = intval($id);
 			   $query = $this->db->query("SELECT * FROM `users` WHERE `id` = $id");
 			   $idfollow = $query->fetch()->id_follow;
-			   if($idfollow=0){
+			   if($idfollow ==0){
+				echo "Вы еще не оформили подписку! Выберете одну из них!";
+			   }
+			   else{
+				   $query2 = $this->db->query("SELECT * FROM `follow` WHERE `id` = $idfollow");
 
+				   $today = date('Y-m-d');
+				   $datefinish = $query2->fetch()->data_finish;
+				   if($datefinish >= $today) {
+				   echo "Ваша предыдущая подпсика подошла к концу, оформите новую и будьте в курсе всех новых ставок";
+				   }
+				   else{
+					   echo "Ваша подписка еще действует до ".$datefinish."";
+				   }
 			   }
 
 		   }
 
+	       /**
+	       * Сборка кнопки
+	       **/
+ 		   public function button($sum){
+			   $return = "";
+			   $mrh_login = "demo";
+			   $mrh_pass1 = "password_1";
+			   $inv_id = 0;
+			   $inv_desc = "Оплата подпсики на ROBOKASSA";
+			   $out_summ = "".intval($sum)."";
+			   $crc = md5("$mrh_login:$out_summ:$inv_id:$mrh_pass1");
+
+			   return "<html><script language=JavaScript ".
+				   "src='https://auth.robokassa.ru/Merchant/PaymentForm/FormMS.js?".
+				   "MerchantLogin=$mrh_login&OutSum=$out_summ&InvoiceID=$inv_id".
+				   "&Description=$inv_desc&SignatureValue=$crc'></script></html>";
+		   }
+
+	 		/**
+	  		* Создание подписки со статусом 3
+	  		**/
+	 		public function createfollow($sum, $id){
+				$sum = intval($sum);
+				$id = intval($id);
+				if($sum == 500){
+					$today = "2016-11-22";
+					$datefinish = date ('Y-m-d', strtotime ('+1 days'));
+
+					$query = $this->db->prepare("INSERT INTO `follow` (`id_user`, `data_begin`, `data_finish`, `status`)
+	                                 VALUES($id, '$today' , '$datefinish' , 3)");
+					$query->execute();
+				}
+
+				if($sum == 2000){
+					$today = "2016-11-22";
+					$datefinish = date ('Y-m-d', strtotime ('+7 days'));
+
+					$query = $this->db->prepare("INSERT INTO `follow` (`id_user`, `data_begin`, `data_finish`, `status`)
+	                                 VALUES($id, '$today' , '$datefinish' , 3)");
+					$query->execute();
+				}
+
+				if($sum == 4000){
+					$today = "2016-11-22";
+					$datefinish = date ('Y-m-d', strtotime ('+31 days'));
+
+					$query = $this->db->prepare("INSERT INTO `follow` (`id_user`, `data_begin`, `data_finish`, `status`)
+	                                 VALUES($id, '$today' , '$datefinish' , 3)");
+					$query->execute();
+				}
+
+			}
+
+
+
+	       /**
+		   * Активация подписки
+		   **/
+	 	   public function activatefollow($id){
+			   $id = intval($id);
+			   $query = $this->db->query("SELECT * FROM `follow` WHERE `id_user` = $id");
+			   $idfollow = $query->fetch()->id;
+
+
+			   $this->db->query("UPDATE `follow` SET `status` = '1' WHERE `id` = $idfollow");
+			   $this->db->query("UPDATE `users` SET `id_follow` = $idfollow WHERE `id` = $id");
+		   }
 
 
 
