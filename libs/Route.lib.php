@@ -14,7 +14,7 @@ class Route {
     * */
    public static function dispatcher(){
 	   //Создаю переменную, которую если что я использовал вместо HTTP_PATH
-	   $stringurl="http://hockeybets/";
+	   $stringurl=str_replace("/index.php", "", HTTP_PATH);
      if(isset($_GET['route']) && !empty($_GET['route'])){
      	$route = explode("/", strip_tags($_GET['route']));
 		$data  = new Data();
@@ -29,7 +29,8 @@ class Route {
 				   exit("Аккаунт успешно активирован!" . nl2br("\n"). 
 				        "Через несколько минут, вас перенаправит на страницу авторизации...");
 				 }		
-				 else{ 
+				 else{
+					self::location($stringurl, 5);
 				   exit("Произошла ошибка при активации акаунта! Пожалуйста, обратитесь к Администрации сайта.");	
 				 }
 				break;
@@ -136,6 +137,14 @@ class Route {
 						fclose($f);
 					}
 				break;
+
+				case "view-news":
+					$result = intval($route[1]);
+					$_SESSION['idnews'] = $result;
+					$stringurl1 = str_replace("/index.php", "", HTTP_PATH);
+					self::location($stringurl1.'view-news');
+				break;
+
 				
 					
 			}
@@ -160,6 +169,15 @@ class Route {
 				case "follow":
 					return "follow";
 					break;
+				case "vip-news":
+					return "vip-news";
+					break;
+				case "gen-news":
+					return "gen-news";
+					break;
+				case "view-news":
+					return "view-news";
+					break;
 				case "logout":
 					self::location($stringurl, 1);
 					$data->logout();
@@ -175,7 +193,7 @@ class Route {
    public static function data(){
    	try{
 		//СОздаю переменную, которую если что я использовал вместо HTTP_PATH
-	   $stringurl="http://hockeybets/";
+	   $stringurl=str_replace("/index.php", "", HTTP_PATH);;
    	 if(isset($_POST) && !empty($_POST)){
    	 	$data = new Data();
    	 	if(isset($_POST['signup'])){

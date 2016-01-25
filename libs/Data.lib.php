@@ -135,55 +135,111 @@
 			 return true;
 		   }
 
+
+
+
 	 		/**
-	  		*	 Новости (выборка данных)
+	  		*	 VIP-Новости (выборка данных)
 	  		**/
-	        public function news($id){
+	        public function vipnews($id, $limit){
 				$id = intval($id);
+				$limit = intval($limit);
+
+
 				$query = $this->db->query("SELECT * FROM `users` WHERE `id` = $id");
 				$idfollow = $query->fetch()->id_follow;
-				if($idfollow > 0){
 
+				if($idfollow > 0) {
 					$query2 = $this->db->query("SELECT * FROM `follow` WHERE `id` = $idfollow");
 
 					$today = date('Y-m-d');
 					$datefinish = $query2->fetch()->data_finish;
-					if($datefinish >= $today){
-						$query3 = $this->db->query("SELECT * FROM `news`");
-						$return = "";
-						while($result = $query3->fetch()){
-							$return .= "<tr><td>{$result->title}</td><td>{$result->text}</td>
-			             <td>{$result->date}</td><br/>";
-						}
 
-						return $return;
+					if ($datefinish >= $today) {
+						if($limit ==0){
+							$query3 = $this->db->query("SELECT * FROM `news` WHERE `status`='VIP'");
+							$return = "";
+
+							while($result = $query3->fetch()){
+								$return .= "<tr><a href='view-news/$result->id'> {$result->title}</a></td><br>
+								<td>{$result->text}</td><br>
+			             		<td>{$result->date}</td><br><br><br>";
+							}
+
+
+							return $return;
+						}
+						else{
+							$query3 = $this->db->query("SELECT * FROM `news` WHERE `status`='VIP' LIMIT ".$limit."");
+							$return = "";
+							while($result = $query3->fetch()){
+								$return .= "<tr><a href='view-news/$result->id'> {$result->title}</a></td><br>
+								<td>{$result->text}</td><br>
+			             		<td>{$result->date}</td><br><br><br>";
+							}
+							return $return;
+
+						}
 					}
-					else{
-						$query3 = $this->db->query("SELECT * FROM `news` WHERE `status`='general'");
-						$return = "";
-						while($result = $query3->fetch()){
-							$return .= "<tr><td>{$result->title}</td><td>{$result->text}</td>
-			             <td>{$result->date}</td><br/>";
-						}
-
-						echo "Ваша подписка закончилась, если хотите топовые ставки, обновите подписку";
-						//нужно будет сылку на обновление подписки
-						return $return;
+					if($datefinish < $today){
+						$this->db->query("DELETE FROM `follow` WHERE `id` = $idfollow");
+						$this->db->query("UPDATE `users` SET `id_follow` = 0 WHERE `id` = $id");
+						return "<div>Ваша подписка закончилась! Если хотите читать VIP-новсти, обновите подписку!</div>";
 					}
 				}
-				else{
-					$query3 = $this->db->query("SELECT * FROM `news` WHERE `status`='general'");
-					$return = "";
-					while($result = $query3->fetch()){
-						$return .= "<tr><td>{$result->title}</td><td>{$result->text}</td>
-			             <td>{$result->date}</td><br/>";
-					}
-
-					echo "Вы еще не оформили подписку? Тогда скорее окунитесь в мир топовых ставок!";
-					//нужно будет сылку на обновление подписки
-					return $return;
-
+				if($idfollow == 0){
+					return "<div>Ваша подписка закончилась или вы ее еще не приобретали! Если хотите читать VIP-новсти, обновите подписку!</div>";
 				}
+			}
+
+
+	 		/**
+	  		*	 Общие новости (выборка данных)
+	  		**/
+	 		public function gennews($id, $limit){
+		 	 		$id = intval($id);
+		 	 		$limit = intval($limit);
+
+
+
+
+				 if($limit == 0){
+					 $query3 = $this->db->query("SELECT * FROM `news` WHERE `status`='general'");
+					 $return = "";
+					 while($result = $query3->fetch()){
+						 $return .= "<tr><a href='view-news/$result->id'> {$result->title}</a></td><br>
+								<td>{$result->text}</td><br>
+			             		<td>{$result->date}</td><br><br><br>";
+					 }
+					 return $return;
+				 }
+				 else{
+					 $query3 = $this->db->query("SELECT * FROM `news` WHERE `status`='general' LIMIT ".$limit."");
+					 $return = "";
+					 while($result = $query3->fetch()){
+						 $return .= "<tr><a href='view-news/$result->id'> {$result->title}</a></td><br>
+								<td>{$result->text}</td><br>
+			             		<td>{$result->date}</td><br><br><br>";
+					 }
+					 return $return;
+
+				 }
+
+
+	        }
+
+	 		/**
+	 		 * Вывод единичной новости по клику на заголовок
+	 		 **/
+	 		public function viewnews($id){
+				$id = intval($id);
+				$query3 = $this->db->query("SELECT * FROM `news` WHERE `id`=$id");
+				$return = "";
+				$result = $query3->fetch();
+					$return .= "<td>{$result->title}</td><br>
+								<td>{$result->text}</td><br>
+			             		<td>{$result->date}</td><br>";
+				echo $return;
 
 			}
 
@@ -204,8 +260,10 @@
 
 				   $today = date('Y-m-d');
 				   $datefinish = $query2->fetch()->data_finish;
-				   if($datefinish >= $today) {
+				   if($datefinish < $today) {
 				   echo "Ваша предыдущая подпсика подошла к концу, оформите новую и будьте в курсе всех новых ставок";
+					   $this->db->query("DELETE FROM `follow` WHERE `id` = $idfollow");
+					   $this->db->query("UPDATE `users` SET `id_follow` = 0 WHERE `id` = $id");
 				   }
 				   else{
 					   echo "Ваша подписка еще действует до ".$datefinish."";
@@ -229,7 +287,8 @@
 			   return "<html><script language=JavaScript ".
 				   "src='https://auth.robokassa.ru/Merchant/PaymentForm/FormMS.js?".
 				   "MerchantLogin=$mrh_login&OutSum=$out_summ&InvoiceID=$inv_id".
-				   "&Description=$inv_desc&SignatureValue=$crc'></script></html>";
+				   "&Description=$inv_desc&SignatureValue=$crc'></script></html>
+				   <br><input class='button-warning pure-button' onclick='window.history.back();' type='button' value='Вернуться'/>";
 		   }
 
 	 		/**
