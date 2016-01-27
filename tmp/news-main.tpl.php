@@ -9,14 +9,14 @@ if(isset($_SESSION['idnews']))
 ?>
 
 
-<?php if(route::dispatcher() == "gen-news"): ?>
+<?php if(Route::dispatcher() == "gen-news"): ?>
     <?php $result1 = $data->gennews(0);  ?>
     <div>Новости</div><br><br>
     <div><?=$result1;?></div><br>
     <div> <a href="/main">Назад</a> </div><br>
     <div>Или</div><br>
     <br><input class="button-warning pure-button" onclick="window.history.back();" type="button" value="Вернуться"/>
-<?php elseif(route::dispatcher() == "view-news"): ?>
+<?php elseif(Route::dispatcher() == "view-news"): ?>
     <?php $result = $data->viewnews($idnews);  ?>
     <br><input class="button-warning pure-button" onclick="window.history.back();" type="button" value="Вернуться"/>
     <div><?=$result;?></div><br>

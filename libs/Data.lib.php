@@ -17,11 +17,11 @@
 		if($data['captcha'] != $_SESSION['captcha']){
 			throw new Exception("Капча введена не верно");
 		}
-	 	$email = validate::clear($data['email']);
+	 	$email = Validate::clear($data['email']);
 		if(!$this->UniqEmail($email)) throw new Exception('Такой email уже зарегистрирован!');
-		$password = validate::hashInit($data['password']);
-		$name = validate::clear($data['name']);
-		if(validate::EmailValidate($email) === false)
+		$password = Validate::hashInit($data['password']);
+		$name = Validate::clear($data['name']);
+		if(Validate::EmailValidate($email) === false)
 		   throw new Exception('Введите корректный email');
 		$time = time();
 	    //Регистрируем пользователя
@@ -34,9 +34,9 @@
 	   if($query->execute()){
 	    //отправляем письмо активации
 	    $id = $this->db->lastInsertId();
-	    $key_hash = validate::hashInit($email."::".$password);
+	    $key_hash = Validate::hashInit($email."::".$password);
 	    $link_activate = $stringurl."activate/".$id."/".$key_hash;
-	    mail::new_mail($email, "Активация аккаунта!", "Здравствуйте, вы зарегистрировались на сайте прогнозов HockeyBets \n\r
+	    Mail::new_mail($email, "Активация аккаунта!", "Здравствуйте, вы зарегистрировались на сайте прогнозов HockeyBets \n\r
 	     Для подтверждения аккаунта, кликните по ссылке активации:" .  $link_activate . "\n\r"); 
 		 
 	     return true;
@@ -56,8 +56,8 @@
 	   	 if(strlen($data['password']) < 5)
 		  throw new Exception('Длина пароля должна быть не менее 6 символов');
 		 
-		 $email = validate::clear($data['email']);
-		 $password = validate::hashInit($data['password']);
+		 $email = Validate::clear($data['email']);
+		 $password = Validate::hashInit($data['password']);
 		 $query = $this->db->prepare("SELECT `id`,`email`, `password`,`activate` FROM `users` WHERE `email` = :email");
 		 $query->bindParam(":email", $email, PDO::PARAM_STR);
 		 $query->execute();
@@ -84,7 +84,7 @@
 	    public function activate_account($id, $activate_key){
 	      $query = $this->db->query("SELECT `email`, `password` FROM `users` WHERE `id` = $id");
 		  $result = $query->fetch();
-		  if($activate_key === validate::hashInit($result->email."::".$result->password)){
+		  if($activate_key === Validate::hashInit($result->email."::".$result->password)){
 		  	if($this->db->exec("UPDATE `users` SET `activate` = 1")) return true;
 		  }	
 		  
@@ -218,13 +218,13 @@
 			 //Генерируем новый пароль
 			 $email = $this->db->quote($email);
 			 $new_password = rand(10,100) . "hgkl" . rand(1,9);
-			 $password = validate::hashInit($new_password);
+			 $password = Validate::hashInit($new_password);
 			   $stringurl=str_replace("/index.php", "", HTTP_PATH);
 			 //Перезаписываем пароль пользователю
 			 $query = $this->db->query("UPDATE `users` SET `password` = '$password' WHERE `email` = $email");
 			 if(!$query) return false;
 			 //отправляем письмо пользователю с новым паролем
-			 mail::new_mail($email, "Новый пароль", "Ваш новый пароль, для доступа к аккаунту\n". $new_password." Ссылка на страницу входа:".$stringurl);
+			 Mail::new_mail($email, "Новый пароль", "Ваш новый пароль, для доступа к аккаунту\n". $new_password." Ссылка на страницу входа:".$stringurl);
 			 
 			 return true;
 		   }
@@ -479,7 +479,7 @@
 				if($data['password'] === "" || $data['password'] === 0){
 					$password = $query_pass->fetch()->password;
 				}else{
-					$password = validate::hashInit($data['password']);
+					$password = Validate::hashInit($data['password']);
 				}
 		    	$query = $this->db->prepare("UPDATE `users` SET `email` = :email, `password` = :password, `name` = :name, `status` = :status,
 		    	                      `country` = :country WHERE `id` = :id");

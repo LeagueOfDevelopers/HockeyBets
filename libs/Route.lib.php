@@ -257,7 +257,7 @@ class Route {
 					}
 		}
 		if(isset($_POST['recover'])){
-			$email = validate::clear($_POST['email']);
+			$email = Validate::clear($_POST['email']);
 			if($data->recover($email)){
 				self::location($stringurl.'login',3);
 				die("На ваш e-mail отправлен новый пароль!

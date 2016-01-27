@@ -76,17 +76,17 @@
 			</ul>
 		</div>
 		<br><br>
-		<?php if(route::dispatcher() == "users"): ?>
+		<?php if(Route::dispatcher() == "users"): ?>
 			<?php include_once 'users.tpl.php'; ?>
-		<?php elseif(route::dispatcher() == "profile"):?>
+		<?php elseif(Route::dispatcher() == "profile"):?>
 			<?php include_once 'profile.tpl.php';	?>
-		<?php elseif(route::dispatcher() == "follow"): ?>
+		<?php elseif(Route::dispatcher() == "follow"): ?>
 			<?php include_once 'follow.tpl.php'; ?>
-		<?php elseif(route::dispatcher() == "addnews"):?>
+		<?php elseif(Route::dispatcher() == "addnews"):?>
 			<?php include_once 'admin/addnews.tpl.php';	?>
-		<?php elseif(route::dispatcher() == "m-news"):?>
+		<?php elseif(Route::dispatcher() == "m-news"):?>
 			<?php include_once 'admin/m-news.tpl.php';	?>
-		<?php elseif(route::dispatcher() == "editnews"):?>
+		<?php elseif(Route::dispatcher() == "editnews"):?>
 			<?php include_once 'admin/edit-news.tpl.php';	?>
 
 		<?php else: ?>
@@ -103,15 +103,15 @@
 
 			</ul>
 		</div>	 <br><br>
-		<?php if(route::dispatcher() == "login"): ?>
+		<?php if(Route::dispatcher() == "login"): ?>
 			<?php include_once 'login.tpl.php'; ?>
-		<?php elseif(route::dispatcher() == "signup"): ?>
+		<?php elseif(Route::dispatcher() == "signup"): ?>
 			<?php include_once 'sign.tpl.php'; ?>
-		<?php elseif(route::dispatcher() == "recover"): ?>
+		<?php elseif(Route::dispatcher() == "recover"): ?>
 			<?php include_once 'repassword.tpl.php'; ?>
-		<?php elseif(route::dispatcher()=="follow"):?>
+		<?php elseif(Route::dispatcher()=="follow"):?>
 		<div>Для оформления подписки зарегистрируйтеся или войдите через свой профиль </div><br>
-		<?php elseif(route::dispatcher() == "main"): ?>
+		<?php elseif(Route::dispatcher() == "main"): ?>
 			<?php include_once 'news-main.tpl.php'; ?>
 		<?php endif; ?>
 
