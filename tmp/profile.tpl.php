@@ -38,7 +38,7 @@ if($result2){
 	</p>
 	<p><?php
 		if($result->id_follow == 0){
-			echo "Вы еще не приобрели подписку!";
+			echo "Вы еще не приобрели подписку!<br><br>";
 		}
 
 		if($data->checkAdmin(($_SESSION['user']['id']) ? $_SESSION['user']['id'] : $_COOKIE['user_id'])){
@@ -66,5 +66,6 @@ if($result2){
 		?>
 
  <button type="submit" class="pure-button pure-button-primary" name="profile">Сменить профиль</button>
+ <br><br><input class="button-warning pure-button" onclick="window.history.back();" type="button" value="Вернуться"/>
 
 </form>

@@ -9,7 +9,7 @@
 	 * */
 	 public function signup($data){
 		 //Создаю переменную, которую если что я использовал вместо HTTP_PATH
-		 $stringurl=str_replace("/index.php", "", HTTP_PATH);;
+		 $stringurl=str_replace("/index.php", "", HTTP_PATH);
 	 	if(strlen($data['password']) < 6)
 		  throw new Exception('Длина пароля должна быть не менее 6 символов');
 		if(empty($data['email']))
@@ -213,17 +213,18 @@
 		   * Востановление пароля
 		   **/
 		   public  function recover($email){
-		   	 if(!$this->UniqEmail($email))
+		   	 if($this->UniqEmail($email))
 			    throw new Exception('Такого email адреса не существует в БД!');
 			 //Генерируем новый пароль
 			 $email = $this->db->quote($email);
 			 $new_password = rand(10,100) . "hgkl" . rand(1,9);
 			 $password = validate::hashInit($new_password);
+			   $stringurl=str_replace("/index.php", "", HTTP_PATH);
 			 //Перезаписываем пароль пользователю
 			 $query = $this->db->query("UPDATE `users` SET `password` = '$password' WHERE `email` = $email");
 			 if(!$query) return false;
 			 //отправляем письмо пользователю с новым паролем
-			 mail::new_mail($email, "Новый пароль", "Ваш новый пароль, для доступа к аккаунту\n". $new_password);
+			 mail::new_mail($email, "Новый пароль", "Ваш новый пароль, для доступа к аккаунту\n". $new_password." Ссылка на страницу входа:".$stringurl);
 			 
 			 return true;
 		   }
@@ -457,7 +458,7 @@
 			
 		   }
 	 		/**
-	 	 	* Профиль пользователя (выборка данных)
+	 	 	* Подписка пользователя (выборка данных)
 	  		**/
 			 public function showFollow($id){
 				 $id = intval($id);

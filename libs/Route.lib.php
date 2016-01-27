@@ -27,7 +27,7 @@ class Route {
 				 if($data->activate_account($id, $activate_key)){
 				   self::location($stringurl.'login', 3);
 				   exit("Аккаунт успешно активирован!" . nl2br("\n"). 
-				        "Через несколько минут, вас перенаправит на страницу авторизации...");
+				        "Через несколько секунд, вас перенаправит на страницу авторизации...");
 				 }		
 				 else{
 					self::location($stringurl, 5);
@@ -241,7 +241,10 @@ class Route {
    	 	$data = new Data();
    	 	if(isset($_POST['signup'])){
    	 		if($data->signup($_POST)){
-   	 		 die("Успешная регистрация! На ваш E-mail отправлено письмо с инструкцией по активации аккаунта");	
+				self::location($stringurl, 10);
+   	 		 die("Успешная регистрация! На ваш E-mail отправлено письмо с инструкцией по активации аккаунта.
+   	 		  <br> Через 10 секунд вас перенесет на главную старницу сайта ");
+
    	 		}else{
    	 			echo "<div class='error'>Произоша ошибка в момент регистрации!</div>";
    	 		}	
@@ -256,7 +259,9 @@ class Route {
 		if(isset($_POST['recover'])){
 			$email = validate::clear($_POST['email']);
 			if($data->recover($email)){
-				die("На ваш e-mail отправлен новый пароль!");
+				self::location($stringurl.'login',3);
+				die("На ваш e-mail отправлен новый пароль!
+				<br> Через 3 секунд вас перенесет на страницу входа");
 			}
 		}
 		if(isset($_POST['profile'])){
