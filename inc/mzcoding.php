@@ -7,7 +7,7 @@ class Mzcoding{
 	public static function init(){
 	  //Подключаем конфигурацию
 	  require dirname(__FILE__).'/config.php';
-	  new route();
+	  new Route(); // route!
 	  //Выводим шаблон
 	  $tmp->show_display('main'); 	
 	}

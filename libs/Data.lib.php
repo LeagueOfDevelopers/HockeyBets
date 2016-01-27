@@ -37,7 +37,7 @@
 	    $key_hash = Validate::hashInit($email."::".$password);
 	    $link_activate = $stringurl."activate/".$id."/".$key_hash;
 	    Mail::new_mail($email, "Активация аккаунта!", "Здравствуйте, вы зарегистрировались на сайте прогнозов HockeyBets \n\r
-	     Для подтверждения аккаунта, кликните по ссылке активации:" .  $link_activate . "\n\r"); 
+	     Для подтверждения аккаунта, кликните по ссылке активации: " .  $link_activate . "\n\r");
 		 
 	     return true;
 	   }
