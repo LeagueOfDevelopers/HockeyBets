@@ -68,10 +68,11 @@
 		<div class="pure-menu pure-menu-open pure-menu-horizontal">
 			<ul>
 				<li><a href="main">Главная</a></li>
-				<li><a href="users">Другие пользователи</a></li>
+				<?php include_once 'admin/menu.tpl.php'; ?>
 				<li><a href="profile">Профиль</a></li>
 				<li><a href="follow">Подписка</a></li>
 				<li><a href="logout">Выход</a></li>
+
 			</ul>
 		</div>
 		<br><br>
@@ -81,6 +82,13 @@
 			<?php include_once 'profile.tpl.php';	?>
 		<?php elseif(route::dispatcher() == "follow"): ?>
 			<?php include_once 'follow.tpl.php'; ?>
+		<?php elseif(route::dispatcher() == "addnews"):?>
+			<?php include_once 'admin/addnews.tpl.php';	?>
+		<?php elseif(route::dispatcher() == "m-news"):?>
+			<?php include_once 'admin/m-news.tpl.php';	?>
+		<?php elseif(route::dispatcher() == "editnews"):?>
+			<?php include_once 'admin/edit-news.tpl.php';	?>
+
 		<?php else: ?>
 			<p>Здесь может быть Все, что угодно.. Для авторизованных юзеров</p>
 			<?php include_once 'news.tpl.php'; ?>
@@ -102,8 +110,12 @@
 		<?php elseif(route::dispatcher() == "recover"): ?>
 			<?php include_once 'repassword.tpl.php'; ?>
 		<?php elseif(route::dispatcher()=="follow"):?>
-			<?php include_once 'follow.tpl.php'; ?>
+		<div>Для оформления подписки зарегистрируйтеся или войдите через свой профиль </div><br>
+		<?php elseif(route::dispatcher() == "main"): ?>
+			<?php include_once 'news-main.tpl.php'; ?>
 		<?php endif; ?>
+
+
 
 
 	<?php endif; ?>

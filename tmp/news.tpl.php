@@ -18,9 +18,9 @@ if(isset($_SESSION['idnews']))
     <div>Или</div><br>
     <br><input class="button-warning pure-button" onclick="window.history.back();" type="button" value="Вернуться"/>
 <?php elseif(route::dispatcher() == "gen-news"): ?>
-<?php $result = $data->gennews($id, 0);  ?>
+<?php $result2 = $data->gennews($id, 0);  ?>
     <div>Новости</div><br><br>
-    <div><?=$result1;?></div><br>
+    <div><?=$result2;?></div><br>
     <div> <a href="/main">Назад</a> </div><br>
     <div>Или</div><br>
     <br><input class="button-warning pure-button" onclick="window.history.back();" type="button" value="Вернуться"/>

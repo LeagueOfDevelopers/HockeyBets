@@ -9,7 +9,7 @@
             <input id="remember" name="remember" value="1" type="checkbox"> Запомнить меня
         </label>
     <br><br>
-        <a href="/<?=DIR;?>/recover">Забыл пароль</a>  || <a href="/<?=DIR;?>/signup">Регистрация</a>
+        <a href="recover">Забыл пароль</a>  || <a href="signup">Регистрация</a>
         <br><br>
         <button type="submit" class="pure-button pure-button-primary" name="login">Войти в кабинет</button>
     </fieldset>

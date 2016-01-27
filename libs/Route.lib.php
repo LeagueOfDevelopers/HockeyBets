@@ -145,6 +145,34 @@ class Route {
 					self::location($stringurl1.'view-news');
 				break;
 
+				case "profile":
+					$result = intval($route[1]);
+					$_SESSION['idprofile'] = $result;
+					$stringurl1 = str_replace("/index.php", "", HTTP_PATH);
+					self::location($stringurl1.'profile');
+					break;
+
+				case "deleteprofile":
+					$result = intval($route[1]);
+					$data->deleteProfile($result);
+					$stringurl1 = str_replace("/index.php", "", HTTP_PATH);
+					self::location($stringurl1.'users');
+					break;
+
+				case "editnews":
+					$result = intval($route[1]);
+					$_SESSION['ideditnews'] = $result;
+					$stringurl1 = str_replace("/index.php", "", HTTP_PATH);
+					self::location($stringurl1.'editnews');
+					break;
+
+				case "deletenews":
+					$result = intval($route[1]);
+					$data->deletNews($result);
+					$stringurl1 = str_replace("/index.php", "", HTTP_PATH);
+					self::location($stringurl1.'m-news');
+					break;
+
 				
 					
 			}
@@ -172,11 +200,26 @@ class Route {
 				case "vip-news":
 					return "vip-news";
 					break;
+				case "addnews":
+					return "addnews";
+					break;
+				case "m-news":
+					return "m-news";
+					break;
+				case "editnews":
+					return "editnews";
+					break;
 				case "gen-news":
 					return "gen-news";
 					break;
 				case "view-news":
 					return "view-news";
+					break;
+				case "main":
+					return "main";
+					break;
+				case "admin":
+					return "admin";
 					break;
 				case "logout":
 					self::location($stringurl, 1);
@@ -220,13 +263,96 @@ class Route {
 			if($data->editProfile($_POST)){
 				echo "<center><strong>Профиль успешно изменен!</strong></center>";
 			}else{
-				echo "<div class='error'>Профиль успешно изменен!</div>";
+				echo "<div class='error'>Профиль не изменен!</div>";
 			}
 		}
 		if(isset($_POST['pay'])) {
 			$data->createfollow($_POST['myfollow'], $_POST['id']);
 			exit($data->button($_POST['myfollow']));
 		}
+
+		 if(isset($_POST['addnews'])) {
+
+			if($_FILES["filename"]["size"] > 1024*3*1024)
+			{
+				echo ("<div class='error'>Размер файла превышает три мегабайта</div>
+						<br><input class='button-warning pure-button' onclick='window.history.back();' type='button' value='Вернуться'/>
+						");
+				exit;
+			}
+			 $file = "tmp/img/".$_FILES["filename"]["name"];
+			// Проверяем загружен ли файл
+			if(is_uploaded_file($_FILES["filename"]["tmp_name"]))
+			{
+				// Если файл загружен успешно, перемещаем его
+				// из временной директории в конечную
+
+				move_uploaded_file($_FILES["filename"]["tmp_name"], $file );
+				if($data->addNews($file,$_POST)){
+					self::location($stringurl);
+				}
+				else{
+					echo("<div class='error'>Ошибка добавления новости</div>
+						<br><input class='button-warning pure-button' onclick='window.history.back();' type='button' value='Вернуться'/>
+						");
+				}
+			} else {
+				echo("<div class='error'>Ошибка загрузки файла</div>
+				<br><input class='button-warning pure-button' onclick='window.history.back();' type='button' value='Вернуться'/>
+				");
+			}
+
+
+			 exit();
+		 }
+
+		 if(isset($_POST['editnews'])) {
+
+			 if(is_uploaded_file($_FILES["filename"]["tmp_name"])){
+				 if($_FILES["filename"]["size"] > 1024*3*1024)
+				 {
+					 echo ("<div class='error'>Размер файла превышает три мегабайта</div>
+						<br><input class='button-warning pure-button' onclick='window.history.back();' type='button' value='Вернуться'/>
+						");
+					 exit;
+				 }
+				 $file = "tmp/img/".$_FILES["filename"]["name"];
+				 // Проверяем загружен ли файл
+				 if(is_uploaded_file($_FILES["filename"]["tmp_name"]))
+				 {
+					 // Если файл загружен успешно, перемещаем его
+					 // из временной директории в конечную
+
+					 move_uploaded_file($_FILES["filename"]["tmp_name"], $file );
+					 if($data->editNews($file,$_POST)){
+						 self::location($stringurl."m-news",2);
+						 exit("Новость успешно изменена. Сейчас вас перенаправит на страницу управления новостями");
+					 }
+					 else{
+						 echo("<div class='error'>Ошибка добавления новости</div>
+						<br><input class='button-warning pure-button' onclick='window.history.back();' type='button' value='Вернуться'/>
+						");
+					 }
+				 } else {
+					 echo("<div class='error'>Ошибка загрузки файла</div>
+				<br><input class='button-warning pure-button' onclick='window.history.back();' type='button' value='Вернуться'/>
+				");
+				 }
+				 exit();
+			 }
+			 else{
+				 $file = $_POST['img'];
+				 if($data->editNews($file,$_POST)){
+
+					 self::location($stringurl."m-news",2);
+					 exit("Новость успешно изменена. Сейчас вас перенаправит на страницу управления новостями");
+				 }
+			 }
+			 exit();
+		 }
+
+
+
    	 }
 	 
 	}catch(Exception $e){
