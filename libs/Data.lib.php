@@ -37,7 +37,7 @@
 	    $key_hash = Validate::hashInit($email."::".$password);
 	    $link_activate = $stringurl."activate/".$id."/".$key_hash;
 	    Mail::new_mail($email, "Активация аккаунта!", "Здравствуйте, вы зарегистрировались на сайте прогнозов HockeyBets \n\r
-	     Для подтверждения аккаунта, кликните по ссылке активации: " .  $link_activate . "\n\r");
+	     Для подтверждения аккаунта, кликните по ссылке активации(или скопируйте в адресную строку): " .  $link_activate . "\n\r");
 		 
 	     return true;
 	   }
@@ -353,6 +353,17 @@
 			   $idfollow = $query->fetch()->id_follow;
 			   if($idfollow ==0){
 				echo "Вы еще не оформили подписку! Выберете одну из них!";
+				echo '<form class="pure-form" method="post">
+						  <fieldset>
+							<legend>Выбор подписки</legend>
+							<br>
+							<input name="myfollow" type="radio" value="500"><a>VIP Подписка на 1 день - 500 рублей</a><br>
+							<input name="myfollow" type="radio" value="2000"><a>VIP Подписка на 7 дней - 2000 рублей</a><br>
+							<input name="myfollow" type="radio" value="4000"><a>VIP Подписка на 31 день - 4000 рублей</a><br><br>
+							<input name="id" type="hidden" value="'.$id.'" >
+							<button type="submit" name="pay" class="pure-button pure-button-primary">Перейти к оплате</button>
+						  </fieldset>
+					  </form>';
 			   }
 			   else{
 				   $query2 = $this->db->query("SELECT * FROM `follow` WHERE `id` = $idfollow");
@@ -361,6 +372,19 @@
 				   $datefinish = $query2->fetch()->data_finish;
 				   if($datefinish < $today) {
 				   echo "Ваша предыдущая подпсика подошла к концу, оформите новую и будьте в курсе всех новых ставок";
+
+				   echo '<form class="pure-form" method="post">
+						  <fieldset>
+							<legend>Выбор подписки</legend>
+							<br>
+							<input name="myfollow" type="radio" value="500"><a>VIP Подписка на 1 день - 500 рублей</a><br>
+							<input name="myfollow" type="radio" value="2000"><a>VIP Подписка на 7 дней - 2000 рублей</a><br>
+							<input name="myfollow" type="radio" value="4000"><a>VIP Подписка на 31 день - 4000 рублей</a><br><br>
+							<input name="id" type="hidden" value="'.$id.'" >
+							<button type="submit" name="pay" class="pure-button pure-button-primary">Перейти к оплате</button>
+						  </fieldset>
+					  	 </form>';
+
 					   $this->db->query("DELETE FROM `follow` WHERE `id` = $idfollow");
 					   $this->db->query("UPDATE `users` SET `id_follow` = 0 WHERE `id` = $id");
 				   }

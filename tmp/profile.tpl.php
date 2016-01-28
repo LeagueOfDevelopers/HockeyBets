@@ -16,6 +16,7 @@ if($result2){
 }
 
 ?>
+
 <form method="post" class="pure-form">
 	<p>
 		E-mail:<br>
@@ -46,8 +47,21 @@ if($result2){
 				echo "	<p>
 				  	Статус пользователя:<br><br>
 				  	<input name='status-pr' type='radio' value='1' checked><a>Администратор</a>
-				  	<input name='status-pr' type='radio' value='0'><a>Пользователь</a>
+				  	<input name='status-pr' type='radio' value='0' ><a>Пользователь</a>
 					</p>";
+				echo '<script>
+					  window.onclick = function onclickRadio() {
+							  var nameRadio = document.getElementsByName("status-pr");
+							  for (var i = 0; i < nameRadio.length; i++) {
+								  if (nameRadio[i].type === "radio" && nameRadio[i].checked) {
+									  rezultatRadio = nameRadio[i].value;
+								  }
+							  }
+							  if(rezultatRadio == "0"){
+								  alert("Вы точно хотите лишить Админа прав? Будьте внимательны, если это ваш профиль, то вы лишитесь доступа к Админ-зоне!");
+							  }
+					  }
+					 </script>';
 			}
 			else{
 				echo "	<p>
@@ -55,13 +69,28 @@ if($result2){
 				  	<input name='status-pr' type='radio' value='1'><a>Администратор</a>
 				  	<input name='status-pr' type='radio' value='0' checked><a>Пользователь</a>
 					</p>";
+				echo '<script>
+					  window.onclick = function onclickRadio() {
+							  var nameRadio = document.getElementsByName("status-pr");
+							  for (var i = 0; i < nameRadio.length; i++) {
+								  if (nameRadio[i].type === "radio" && nameRadio[i].checked) {
+									  rezultatRadio = nameRadio[i].value;
+								  }
+							  }
+							  if(rezultatRadio == "1"){
+								  alert("Вы точно наделить пользователся правами админа? Будьте внимательны, ибо простой пользователь моежт получить доступ к Админ-зоне");
+							  }
+					  }
+					 </script>';
 			}
-			echo "
-			<p>Дата начала подписки:</p> <input type='date' name='calendar-begin' value='$result3->data_begin'><br>
-			<p>Дата конца подписки: </p> <input type='date' name='calendar-finish' value='$result3->data_finish''><br><br>
-			<em>Чтобы удалить подписку у пользователя, достаточно поставить дату конца подписки на прошедшую дату.</em><br>
-			<em>Подписка автоматически удалится при следующем посищении юзера сайта</em><br><br>
-			";
+			if($result->id_follow != 0) {
+				echo "
+				<p>Дата начала подписки:</p> <input type='date' name='calendar-begin' value='$result3->data_begin'><br>
+				<p>Дата конца подписки: </p> <input type='date' name='calendar-finish' value='$result3->data_finish''><br><br>
+				<em>Чтобы удалить подписку у пользователя, достаточно поставить дату конца подписки на прошедшую дату.</em><br>
+				<em>Подписка автоматически удалится при следующем посищении юзера сайта</em><br><br>
+				";
+			}
 		}
 		?>
 
@@ -69,3 +98,6 @@ if($result2){
  <br><br><input class="button-warning pure-button" onclick="window.history.back();" type="button" value="Вернуться"/>
 
 </form>
+
+
+
