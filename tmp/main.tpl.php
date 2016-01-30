@@ -78,6 +78,8 @@
 		<br><br>
 		<?php if(Route::dispatcher() == "users"): ?>
 			<?php include_once 'users.tpl.php'; ?>
+		<?php elseif(Route::dispatcher() == ""): ?>
+			<?php include_once 'news.tpl.php'; ?>
 		<?php elseif(Route::dispatcher() == "profile"):?>
 			<?php include_once 'profile.tpl.php';	?>
 		<?php elseif(Route::dispatcher() == "follow"): ?>
@@ -113,12 +115,15 @@
 		<div>Для оформления подписки зарегистрируйтеся или войдите через свой профиль </div><br>
 		<?php elseif(Route::dispatcher() == "main"): ?>
 			<?php include_once 'news-main.tpl.php'; ?>
+		<?php elseif(Route::dispatcher() == ""): ?>
+			<?php include_once 'news-main.tpl.php'; ?>
 		<?php endif; ?>
 
 
 
 
 	<?php endif; ?>
+
 </div>
 <div class="copyright">
 	&copy; <?=date('Y');?> HockeyBets.ru

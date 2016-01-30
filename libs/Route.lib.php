@@ -182,6 +182,9 @@ class Route {
 				case "signup":
 				  return "signup";
 				break;
+				case "":
+					return "";
+					break;
 				case "login":
 					return "login";
 				break;
