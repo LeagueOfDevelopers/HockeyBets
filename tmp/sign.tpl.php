@@ -1,30 +1,14 @@
-<form class="pure-form" method="post">
-    <fieldset>
-        <legend>Регистрация в несколько кликов...</legend>
-
-<br>
-        <p><em class='result_email'></em></p>
-        <input type="email" class="email" name="email" placeholder="Ваш Email" size="35" required>
-        <p><em class='result_password'></em></p>
-        <input type="password" placeholder="Ваш пароль" class='password' name="password" size="35" required > <br><br>
-  
-        <input type="text" name="name" placeholder="Ваше имя"  size="35"><br><br>
-        <br><br>
+<form id="login-form" method="post">
+		<p id = "email-label" class = "login-label">Введите корректный email</p>
+        <input type="email" id = "email" class="textfield" name="email" placeholder="Ваш Email" size="35" required>
+        <p id = "password-label" class = "login-label">Пароль должен содержать минимум 6 символов</p>
+		<input type="password" id = "password" placeholder="Ваш пароль" class='textfield' name="password" size="35" required >
+        <input type="text" name="name" placeholder="Ваше имя" class = "textfield" size="35">
         <img src="tmp/captcha/img.php">
         <br>
-        <input type="text" name="captcha" placeholder="Введите ссуму чисел" size="35">
+        <input type="text" name="captcha" class = "textfield" placeholder="Введите ссуму чисел" size="35">
         <br><br>
      <p><strong>Внимание!</strong> - После регистрации, на ваш email прийдет активационное письмо..</p>
-        <br><br>
-        <button type="submit" name="signup" class="pure-button pure-button-primary">Зарегистрироваться</button>
-       	
-    </fieldset>
-  
-
+        <button type="submit" name="signup" class="login-submit">Зарегистрироваться</button>
+		<a href="login" class="login-bigbutton">Уже есть аккаунт?</a>
 </form>
-<br>
-       <h2>ИЛИ</h2>
-       <br>
-        <a href="/<?=DIR?>/login">
-        	<button class="button-warning pure-button">Войти в кабинет</button>
-        </a> 

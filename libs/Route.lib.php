@@ -182,9 +182,6 @@ class Route {
 				case "signup":
 				  return "signup";
 				break;
-				case "":
-					return "";
-					break;
 				case "login":
 					return "login";
 				break;
@@ -200,6 +197,15 @@ class Route {
 				case "follow":
 					return "follow";
 					break;
+				case "aboutus":
+					return "aboutus";
+				break;
+				case "statistics":
+					return "statistics";
+				break;
+				case "faq":
+					return "faq";
+				break;
 				case "vip-news":
 					return "vip-news";
 					break;
@@ -217,6 +223,12 @@ class Route {
 					break;
 				case "view-news":
 					return "view-news";
+					break;
+				case "news":
+					return "news";
+					break;
+				case "":
+					return "";
 					break;
 				case "main":
 					return "main";

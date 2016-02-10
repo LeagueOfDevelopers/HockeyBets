@@ -58,6 +58,7 @@
 		 
 		 $email = Validate::clear($data['email']);
 		 $password = Validate::hashInit($data['password']);
+		 $remember = isset($data['remember']);	//хаки от медведя
 		 $query = $this->db->prepare("SELECT `id`,`email`, `password`,`activate` FROM `users` WHERE `email` = :email");
 		 $query->bindParam(":email", $email, PDO::PARAM_STR);
 		 $query->execute();

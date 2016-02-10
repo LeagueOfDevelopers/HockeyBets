@@ -1,6 +1,5 @@
-<form method="post" class="pure-form">
-	<p>Введите ваш email:<br>
-		<input type="email" name="email" placeholder="Введите email" size="35">
+<form id = "login-form" method="post">
+		<input type="email" name="email" placeholder="Введите Email" class = "textfield" size="35">
 	</p>
-<button type="submit" class="pure-button pure-button-primary" name="recover">Воcтановить пароль</button>	
+<button type="submit" class="login-submit" name="recover">Воcтановить пароль</button>	
 </form>

@@ -22,10 +22,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Data.lib.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Data.lib.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/libs/Data.lib.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-193.53847">
+            <state vertical-scroll-proportion="0.0">
               <caret line="359" column="49" selection-start-line="359" selection-start-column="43" selection-end-line="359" selection-end-column="49" />
               <folding>
                 <marker date="1453997196186" expanded="true" signature="1031:1184" placeholder="INSERT INTO ..." />
@@ -114,46 +114,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Connect.lib.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libs/Connect.lib.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Route.lib.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/Route.lib.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.1132073">
-              <caret line="184" column="16" selection-start-line="184" selection-start-column="16" selection-end-line="186" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.tpl.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tmp/main.tpl.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.73063976">
-              <caret line="118" column="54" selection-start-line="117" selection-start-column="8" selection-end-line="118" selection-end-column="54" />
-              <folding>
-                <marker date="1454164119927" expanded="true" signature="909:918" placeholder="..." />
-                <marker date="1454164119927" expanded="true" signature="1061:1072" placeholder="..." />
-                <marker date="1454164119927" expanded="true" signature="1326:1335" placeholder="..." />
-                <marker date="1454164119927" expanded="true" signature="1503:1514" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="news.tpl.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tmp/news.tpl.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.923077">
-              <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="news-main.tpl.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tmp/news-main.tpl.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.769231">
-              <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="245" column="57" selection-start-line="245" selection-start-column="57" selection-end-line="245" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -223,16 +198,16 @@
         <option value="$PROJECT_DIR$/tmp/admin/addnews.tpl.php" />
         <option value="$PROJECT_DIR$/tmp/users.tpl.php" />
         <option value="$PROJECT_DIR$/tmp/admin/menu.tpl.php" />
+        <option value="$PROJECT_DIR$/tmp/main.tpl.php" />
         <option value="$PROJECT_DIR$/tmp/news.tpl.php" />
         <option value="$PROJECT_DIR$/tmp/news-main.tpl.php" />
         <option value="$USER_HOME$/Desktop/config.php" />
         <option value="$PROJECT_DIR$/inc/mzcoding.php" />
         <option value="$PROJECT_DIR$/libs/Mail.lib.php" />
+        <option value="$PROJECT_DIR$/libs/Route.lib.php" />
         <option value="$PROJECT_DIR$/tmp/profile.tpl.php" />
         <option value="$PROJECT_DIR$/tmp/follow.tpl.php" />
         <option value="$PROJECT_DIR$/libs/Data.lib.php" />
-        <option value="$PROJECT_DIR$/libs/Route.lib.php" />
-        <option value="$PROJECT_DIR$/tmp/main.tpl.php" />
       </list>
     </option>
   </component>
@@ -276,6 +251,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -356,8 +333,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -419,7 +394,7 @@
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -727,6 +702,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/news.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.923077">
+          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/news-main.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.769231">
+          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tmp/repassword.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -745,6 +734,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.5">
           <caret line="13" column="99" selection-start-line="13" selection-start-column="99" selection-end-line="13" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -808,6 +804,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tmp/main.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6167472">
+          <caret line="118" column="0" selection-start-line="118" selection-start-column="0" selection-end-line="118" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tmp/admin/addnews.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -835,6 +838,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="54" selection-start-line="7" selection-start-column="54" selection-end-line="7" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/Route.lib.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="245" column="57" selection-start-line="245" selection-start-column="57" selection-end-line="245" selection-end-column="57" />
           <folding />
         </state>
       </provider>
@@ -869,17 +880,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/libs/Data.lib.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-193.53847">
+        <state vertical-scroll-proportion="0.0">
           <caret line="359" column="49" selection-start-line="359" selection-start-column="43" selection-end-line="359" selection-end-column="49" />
           <folding>
             <marker date="1453997196186" expanded="true" signature="1031:1184" placeholder="INSERT INTO ..." />
@@ -929,43 +932,6 @@
             <marker date="1453997196186" expanded="true" signature="17603:17636" placeholder="DELETE FROM ..." />
             <marker date="1453997196186" expanded="true" signature="17666:17705" placeholder="DELETE FROM ..." />
             <marker date="1453997196186" expanded="true" signature="17883:17925" placeholder="SELECT `stat..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tmp/news.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.923077">
-          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/Route.lib.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.1132073">
-          <caret line="184" column="16" selection-start-line="184" selection-start-column="16" selection-end-line="186" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tmp/news-main.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231">
-          <caret line="18" column="4" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tmp/main.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73063976">
-          <caret line="118" column="54" selection-start-line="117" selection-start-column="8" selection-end-line="118" selection-end-column="54" />
-          <folding>
-            <marker date="1454164119927" expanded="true" signature="909:918" placeholder="..." />
-            <marker date="1454164119927" expanded="true" signature="1061:1072" placeholder="..." />
-            <marker date="1454164119927" expanded="true" signature="1326:1335" placeholder="..." />
-            <marker date="1454164119927" expanded="true" signature="1503:1514" placeholder="..." />
           </folding>
         </state>
       </provider>
