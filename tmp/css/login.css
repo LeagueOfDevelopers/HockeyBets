@@ -74,3 +74,20 @@
 	color:red;
 	
 }
+
+.radio-button{
+	width:146px;
+	font-size:14px;
+}
+
+.profile-button{
+	width:300px;
+	margin-top:5px;
+	color:#3d74a6
+}
+
+#exit-button{
+	
+	color:red;
+}
+

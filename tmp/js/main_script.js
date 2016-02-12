@@ -9,7 +9,10 @@ $(function() {
 	
 	
 			$( "#check" ).button();
-			$( ".login-button, .login-bigbutton, .login-submit" )
+			$("#radio-set").buttonset();
+			$(".datepicker").datepicker();
+			$(".datepicker").datepicker("option", "dateFormat", "yy-mm-dd");
+			$( ".login-button, .login-bigbutton, .login-submit, .admin-button, .profile-button" )
 				.button();
 			$(".login-submit").button("disable");
 			$emailStatus = false;

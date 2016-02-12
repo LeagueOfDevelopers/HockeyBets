@@ -4,5 +4,9 @@ $id = ($_SESSION['user']['id']) ? $_SESSION['user']['id'] : $_COOKIE['user_id'];
 $result = $data->checkAdmin($id);
 ?>
 
-<li><a href='users'>Управление пользователями</a></li>
-<li><a href='m-news'>Управление новостями</a></li>
+<?php if($result):?>
+<div class = "admin-menu">
+	<a href='users' class = "admin-button">Управление пользователями</a>
+	<a href='m-news' class = "admin-button">Управление новостями</a>
+</div>
+<?php endif;?>

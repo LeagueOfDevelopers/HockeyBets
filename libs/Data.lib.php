@@ -256,9 +256,12 @@
 							$return = "";
 
 							while($result = $query3->fetch()){
-								$return .= "<tr><a href='view-news/$result->id'> {$result->title}</a></td><br>
-								<td>{$result->text}</td><br>
-			             		<td>{$result->date}</td><br><br><br>";
+								  $return .= "
+										<div class = 'news-block' style = 'background-image: url({$result->img})'>
+										<a href='view-news/$result->id'>	
+											<div class ='news-block-title'> {$result->title}</div>
+										</a>
+										</div>";
 							}
 
 
@@ -268,9 +271,12 @@
 							$query3 = $this->db->query("SELECT * FROM `news` WHERE `status`='VIP' LIMIT ".$limit."");
 							$return = "";
 							while($result = $query3->fetch()){
-								$return .= "<tr><a href='view-news/$result->id'> {$result->title}</a></td><br>
-								<td>{$result->text}</td><br>
-			             		<td>{$result->date}</td><br><br><br>";
+								 $return .= "
+										<div class = 'news-block' style = 'background-image: url({$result->img})'>
+										<a href='view-news/$result->id'>	
+											<div class ='news-block-title'> {$result->title}</div>
+										</a>
+										</div>";
 							}
 							return $return;
 
@@ -305,9 +311,12 @@
 					 $query3 = $this->db->query("SELECT * FROM `news` WHERE `status`='general'");
 					 $return = "";
 					 while($result = $query3->fetch()){
-						 $return .= "<tr><a href='view-news/$result->id'> {$result->title}</a></td><br>
-								<td>{$result->text}</td><br>
-			             		<td>{$result->date}</td><br><br><br>";
+						  $return .= "
+										<div class = 'news-block' style = 'background-image: url({$result->img})'>
+										<a href='view-news/$result->id'>	
+											<div class ='news-block-title'> {$result->title}</div>
+										</a>
+										</div>";
 					 }
 					 return $return;
 				 }
@@ -315,9 +324,12 @@
 					 $query3 = $this->db->query("SELECT * FROM `news` WHERE `status`='general' LIMIT ".$limit."");
 					 $return = "";
 					 while($result = $query3->fetch()){
-						 $return .= "<tr><a href='view-news/$result->id'> {$result->title}</a></td><br>
-								<td>{$result->text}</td><br>
-			             		<td>{$result->date}</td><br><br><br>";
+						  $return .= "
+										<div class = 'news-block' style = 'background-image: url({$result->img})'>
+										<a href='view-news/$result->id'>	
+											<div class ='news-block-title'> {$result->title}</div>
+										</a>
+										</div>";
 					 }
 					 return $return;
 
@@ -326,6 +338,8 @@
 
 	        }
 
+			
+			
 	 		/**
 	 		 * Вывод единичной новости по клику на заголовок
 	 		 **/
@@ -334,10 +348,10 @@
 				$query3 = $this->db->query("SELECT * FROM `news` WHERE `id`=$id");
 				$return = "";
 				$result = $query3->fetch();
-					$return .= "<td>{$result->title}</td><br>
-								<td><img src='{$result->img}' alt='Картинка к новости' style='width: 25%; height: 25%;'></td><br>
-								<td>{$result->text}</td><br>
-			             		<td>{$result->date}</td><br>
+					$return .= "<p class = 'view-news-title'>{$result->title}</p>
+								<img src='{$result->img}' alt='Картинка к новости' style='width: 25%; height: 25%;'>
+								<p>{$result->text}</p>
+			             		<p class = 'view-news-date'>{$result->date}</p>
 			             		";
 				echo $return;
 

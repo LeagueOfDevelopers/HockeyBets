@@ -17,26 +17,21 @@ if($result2){
 
 ?>
 
-<form method="post" class="pure-form">
-	<p>
-		E-mail:<br>
-		<input type="email" name="email" size="35" value="<?=$result->email;?>">
-	</p>
-	<p>
-		Пароль: <br>
-		<input type="password" name="password" size="35" value=""><br>
+<form method="post" id="login-form">
+	<p>E-mail:</p>
+		<input type="email" name="email" class="textfield" size="35" value="<?=$result->email;?>">
+	
+	<p>Пароль:</p>
+		<input type="password" name="password" class="textfield" size="35" value=""><br>
 		<em>Оставьте поле пустым, если не хотите менять пароль! </em>
-	</p>
-	<p>
-		Имя:<br>
-		<input type="text" name="name" size="35" value="<?=$result->name;?>">
-	</p>
-	<p>
-		Страна:<br>
-		<input type="text" name="country" size="35" value="<?=$result->country;?>">
+
+	<p>Имя:</p>
+		<input type="text" name="name" size="35" class="textfield" value="<?=$result->name;?>">
+	<p>Страна:</p>
+		<input type="text" name="country" size="35" class="textfield" value="<?=$result->country;?>">
 		<input type="hidden" name="id" value="<?php echo $id;?>">
 		<input type="hidden" name="idfollow" value="<?=$result->id_follow;?>" >
-	</p>
+
 	<p><?php
 		if($result->id_follow == 0){
 			echo "Вы еще не приобрели подписку!<br><br>";
@@ -44,11 +39,12 @@ if($result2){
 
 		if($data->checkAdmin(($_SESSION['user']['id']) ? $_SESSION['user']['id'] : $_COOKIE['user_id'])){
 			if($result->status ==1){
-				echo "	<p>
-				  	Статус пользователя:<br><br>
-				  	<input name='status-pr' type='radio' value='1' checked><a>Администратор</a>
-				  	<input name='status-pr' type='radio' value='0' ><a>Пользователь</a>
-					</p>";
+				echo "	
+				<p>Статус пользователя:</p>
+					<div id = 'radio-set'>
+						<input name='status-pr' id = 'radio1'  type='radio' value='1' checked><label class = 'radio-button' for = 'radio1' >Администратор</label>
+						<input name='status-pr' id = 'radio2'  type='radio' value='0' ><label class = 'radio-button' for = 'radio2'>Пользователь</label>
+					</div>";
 				echo '<script>
 					  window.onclick = function onclickRadio() {
 							  var nameRadio = document.getElementsByName("status-pr");
@@ -64,11 +60,11 @@ if($result2){
 					 </script>';
 			}
 			else{
-				echo "	<p>
-				  	Статус пользователя:<br><br>
-				  	<input name='status-pr' type='radio' value='1'><a>Администратор</a>
-				  	<input name='status-pr' type='radio' value='0' checked><a>Пользователь</a>
-					</p>";
+				echo "	<p>Статус пользователя:</p>
+					<div id = 'radio-set'>
+						<input name='status-pr' id = 'radio1'  type='radio' value='1'><label class = 'radio-button' for = 'radio1' >Администратор</label>
+						<input name='status-pr' id = 'radio2'  type='radio' value='0' checked><label class = 'radio-button' for = 'radio2'>Пользователь</label>
+					</div>";
 				echo '<script>
 					  window.onclick = function onclickRadio() {
 							  var nameRadio = document.getElementsByName("status-pr");
@@ -78,24 +74,25 @@ if($result2){
 								  }
 							  }
 							  if(rezultatRadio == "1"){
-								  alert("Вы точно наделить пользователся правами админа? Будьте внимательны, ибо простой пользователь моежт получить доступ к Админ-зоне");
+								  alert("Вы точно наделить пользователся правами админа? Будьте внимательны, т.к. простой пользователь моежт получить доступ к Админ-зоне");
 							  }
 					  }
 					 </script>';
 			}
 			if($result->id_follow != 0) {
 				echo "
-				<p>Дата начала подписки:</p> <input type='date' name='calendar-begin' value='$result3->data_begin'><br>
-				<p>Дата конца подписки: </p> <input type='date' name='calendar-finish' value='$result3->data_finish''><br><br>
+				<p>Дата начала подписки:</p> <input type='date' class = 'datepicker' name='calendar-begin' value='$result3->data_begin'><br>
+				<p>Дата конца подписки: </p> <input type='date' class = 'datepicker' name='calendar-finish' value='$result3->data_finish''><br><br>
 				<em>Чтобы удалить подписку у пользователя, достаточно поставить дату конца подписки на прошедшую дату.</em><br>
-				<em>Подписка автоматически удалится при следующем посищении юзера сайта</em><br><br>
+				<em>Подписка автоматически удалится при следующем посищении юзера сайта</em>
 				";
 			}
 		}
 		?>
 
- <button type="submit" class="pure-button pure-button-primary" name="profile">Сменить профиль</button>
- <br><br><input class="button-warning pure-button" onclick="window.history.back();" type="button" value="Вернуться"/>
+ <button type="submit" class="profile-button" name="profile">Изменить информацию</button>
+ <a href="follow" class = "profile-button">Подписка</a>
+ <a href="logout" class = "profile-button" id = "exit-button">Выход из аккаунта</a>
 
 </form>
 

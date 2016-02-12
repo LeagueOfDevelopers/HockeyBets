@@ -1,8 +1,8 @@
 <?php
 $data = new data();
 $id = ($_SESSION['user']['id']) ? $_SESSION['user']['id'] : $_COOKIE['user_id'];
-$result = $data->vipnews($id, 10);
-$result1 = $data->gennews($id, 10);
+$result = $data->vipnews($id, 6);
+$result1 = $data->gennews($id, 6);
 if(isset($_SESSION['idnews']))
 {
     $idnews = $_SESSION['idnews'];
@@ -12,30 +12,33 @@ if(isset($_SESSION['idnews']))
 ?>
 <?php if(Route::dispatcher() == "vip-news"): ?>
 <?php $result = $data->vipnews($id, 0);  ?>
-    <div>VIP-Новости</div><br><br>
-    <div><?=$result;?></div><br>
-    <div> <a href="/main">Назад</a> </div><br>
-    <div>Или</div><br>
-    <br><input class="button-warning pure-button" onclick="window.history.back();" type="button" value="Вернуться"/>
+    <div class = "news-page-title">VIP-Новости</div>
+    <div><?=$result;?></div>
+	<div class = "clear"></div>
+
+	
 <?php elseif(Route::dispatcher() == "gen-news"): ?>
 <?php $result2 = $data->gennews($id, 0);  ?>
-    <div>Новости</div><br><br>
-    <div><?=$result2;?></div><br>
-    <div> <a href="/main">Назад</a> </div><br>
-    <div>Или</div><br>
-    <br><input class="button-warning pure-button" onclick="window.history.back();" type="button" value="Вернуться"/>
+    <div class = "news-page-title">Новости</div>
+    <div><?=$result2;?></div>
+	<div class = "clear"></div>
+
+	
 <?php elseif(Route::dispatcher() == "view-news"): ?>
 <?php $result = $data->viewnews($idnews);  ?>
-    <br><input class="button-warning pure-button" onclick="window.history.back();" type="button" value="Вернуться"/>
-<div><?=$result;?></div><br>
-<?php else: ?>
-<div>VIP-Новости</div><br><br>
-<div><?=$result;?></div><br>
-<div> <a href="vip-news">Читать полностью</a> </div><br><br>
+<?=$result;?>
 
-<div>Новости</div><br><br>
-<div><?=$result1;?></div><br>
-<div> <a href="gen-news">Читать полностью</a> </div>
+<?php else: ?>
+
+	<a class = "read-all-news" href="vip-news"><div class = "news-page-title">VIP-Новости</div></a>
+	<div><?=$result;?></div>
+	<div class = "clear"></div>
+
+
+	<a class = "read-all-news" href="gen-news"><div class = "news-page-title">Новости</div></a>
+	<?=$result1;?>
+	<div class = "clear"></div>
+
 <?php endif; ?>
 
 
