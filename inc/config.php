@@ -30,7 +30,7 @@
   * 
   * Если имя сервера не localhost, пропишите имя сервера 4м параметром
   * */
- Connect::_self()->setDatabase("root", "","hockeybets");
+ Connect::_self()->setDatabase("m91509ha_nikak", "1Assassin12","m91509ha_nikak");
  
  //Экземпляр класса шаблонизатора
  $tmp = new Tmp();
