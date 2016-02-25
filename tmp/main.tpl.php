@@ -35,7 +35,7 @@
 				<?php if(Validate::UserStatus() == false): ?>
 				<a href="login"><div class = "button header-button-right"><span class = "center">Войти</span></div></a>
 				<?php else: ?>
-				<a href="profile"><div class = "button header-button-right"><span class = "center">Личный кабинет</span></div></a>
+				<a href="profile"><div class = "button header-button-right header-big-button"><span class = "center">Личный кабинет</span></div></a>
 				<?php endif; ?>
 				<a href="faq"><div class = "button header-button-right"><span class = "center">FAQ</span></div></a>
 			</div>
