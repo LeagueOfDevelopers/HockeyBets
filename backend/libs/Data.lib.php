@@ -58,7 +58,6 @@
 		 
 		 $email = Validate::clear($data['email']);
 		 $password = Validate::hashInit($data['password']);
-		 $remember = isset($data['remember']);	//хаки от медведя
 		 $query = $this->db->prepare("SELECT `id`,`email`, `password`,`activate` FROM `users` WHERE `email` = :email");
 		 $query->bindParam(":email", $email, PDO::PARAM_STR);
 		 $query->execute();
@@ -91,8 +90,6 @@
 		  
 		  return false;
 	    }
-
-
 		/**
 		 * Вывод списка пользователей
 		 **/
@@ -106,12 +103,15 @@
 				else{
 					$status = "Пользователь";
 				}
-			  include "html/showUsers.php";
-			}
-
+			  $return .= "<tr><td>{$result->id}</td><td>{$result->email}</td>
+			             <td>{$result->country}</td><td>{$status}</td>
+			             <td>".date('d-m-Y', $result->date_register)."</td>
+			             <td><a href='profile/$result->id'> Редактировать</a><span> ||</span>
+			             <a href='deleteprofile/$result->id'>Удалить</a></td></tr>";
+			} 
+			
 			return $return;
 		 }
-
 
 		 /**
 		  * Вывод списка новостей для Админа
@@ -127,12 +127,15 @@
 				 else{
 					 $status = "Общая новость";
 				 }
-				 include "html/showNews.php";
+				 $return .= "<tr><td>{$result->id}</td><td>{$result->title}</td>
+							 <td>{$status}</td>
+							 <td>{$result->date}</td>
+							 <td><a href='editnews/$result->id'> Редактировать</a><span> ||</span>
+							 <a href='deletenews/$result->id'> Удалить</a></td></tr>";
 			 }
 
 			 return $return;
 		 }
-
 
 		 /**
 		  * Добавление новости
@@ -252,16 +255,9 @@
 							$return = "";
 
 							while($result = $query3->fetch()){
-<<<<<<< HEAD
-								  $return .= "
-										<div class = 'news-block' style = 'background-image: url({$result->img})'>
-										<a href='view-news/$result->id'>	
-											<div class ='news-block-title'> {$result->title}</div>
-										</a>
-										</div>";
-=======
-								include "html/vipnews.php";
->>>>>>> origin/hockeybets
+								$return .= "<tr><a href='view-news/$result->id'> {$result->title}</a></td><br>
+								<td>{$result->text}</td><br>
+			             		<td>{$result->date}</td><br><br><br>";
 							}
 
 
@@ -271,16 +267,9 @@
 							$query3 = $this->db->query("SELECT * FROM `news` WHERE `status`='VIP' LIMIT ".$limit."");
 							$return = "";
 							while($result = $query3->fetch()){
-<<<<<<< HEAD
-								 $return .= "
-										<div class = 'news-block' style = 'background-image: url({$result->img})'>
-										<a href='view-news/$result->id'>	
-											<div class ='news-block-title'> {$result->title}</div>
-										</a>
-										</div>";
-=======
-								include "html/vipnews.php";
->>>>>>> origin/hockeybets
+								$return .= "<tr><a href='view-news/$result->id'> {$result->title}</a></td><br>
+								<td>{$result->text}</td><br>
+			             		<td>{$result->date}</td><br><br><br>";
 							}
 							return $return;
 
@@ -315,16 +304,9 @@
 					 $query3 = $this->db->query("SELECT * FROM `news` WHERE `status`='general'");
 					 $return = "";
 					 while($result = $query3->fetch()){
-<<<<<<< HEAD
-						  $return .= "
-										<div class = 'news-block' style = 'background-image: url({$result->img})'>
-										<a href='view-news/$result->id'>	
-											<div class ='news-block-title'> {$result->title}</div>
-										</a>
-										</div>";
-=======
-						  include "html/gennews.php";
->>>>>>> origin/hockeybets
+						 $return .= "<tr><a href='view-news/$result->id'> {$result->title}</a></td><br>
+								<td>{$result->text}</td><br>
+			             		<td>{$result->date}</td><br><br><br>";
 					 }
 					 return $return;
 				 }
@@ -332,16 +314,9 @@
 					 $query3 = $this->db->query("SELECT * FROM `news` WHERE `status`='general' LIMIT ".$limit."");
 					 $return = "";
 					 while($result = $query3->fetch()){
-<<<<<<< HEAD
-						  $return .= "
-										<div class = 'news-block' style = 'background-image: url({$result->img})'>
-										<a href='view-news/$result->id'>	
-											<div class ='news-block-title'> {$result->title}</div>
-										</a>
-										</div>";
-=======
-						 include "html/gennews.php";
->>>>>>> origin/hockeybets
+						 $return .= "<tr><a href='view-news/$result->id'> {$result->title}</a></td><br>
+								<td>{$result->text}</td><br>
+			             		<td>{$result->date}</td><br><br><br>";
 					 }
 					 return $return;
 
@@ -350,8 +325,6 @@
 
 	        }
 
-			
-			
 	 		/**
 	 		 * Вывод единичной новости по клику на заголовок
 	 		 **/
@@ -360,16 +333,11 @@
 				$query3 = $this->db->query("SELECT * FROM `news` WHERE `id`=$id");
 				$return = "";
 				$result = $query3->fetch();
-<<<<<<< HEAD
-					$return .= "<p class = 'view-news-title'>{$result->title}</p>
-								<img src='{$result->img}' alt='Картинка к новости' style='width: 25%; height: 25%;'>
-								<p>{$result->text}</p>
-			             		<p class = 'view-news-date'>{$result->date}</p>
+					$return .= "<td>{$result->title}</td><br>
+								<td><img src='{$result->img}' alt='Картинка к новости' style='width: 25%; height: 25%;'></td><br>
+								<td>{$result->text}</td><br>
+			             		<td>{$result->date}</td><br>
 			             		";
-=======
-					include "html/viewnews.php";
-
->>>>>>> origin/hockeybets
 				echo $return;
 
 			}
@@ -385,7 +353,17 @@
 			   $idfollow = $query->fetch()->id_follow;
 			   if($idfollow ==0){
 				echo "Вы еще не оформили подписку! Выберете одну из них!";
-				include "html/follow.php";
+				echo '<form class="pure-form" method="post">
+						  <fieldset>
+							<legend>Выбор подписки</legend>
+							<br>
+							<input name="myfollow" type="radio" value="500"><a>VIP Подписка на 1 день - 500 рублей</a><br>
+							<input name="myfollow" type="radio" value="2000"><a>VIP Подписка на 7 дней - 2000 рублей</a><br>
+							<input name="myfollow" type="radio" value="4000"><a>VIP Подписка на 31 день - 4000 рублей</a><br><br>
+							<input name="id" type="hidden" value="'.$id.'" >
+							<button type="submit" name="pay" class="pure-button pure-button-primary">Перейти к оплате</button>
+						  </fieldset>
+					  </form>';
 			   }
 			   else{
 				   $query2 = $this->db->query("SELECT * FROM `follow` WHERE `id` = $idfollow");
@@ -395,7 +373,17 @@
 				   if($datefinish < $today) {
 				   echo "Ваша предыдущая подпсика подошла к концу, оформите новую и будьте в курсе всех новых ставок";
 
-					   include "html/follow.php";
+				   echo '<form class="pure-form" method="post">
+						  <fieldset>
+							<legend>Выбор подписки</legend>
+							<br>
+							<input name="myfollow" type="radio" value="500"><a>VIP Подписка на 1 день - 500 рублей</a><br>
+							<input name="myfollow" type="radio" value="2000"><a>VIP Подписка на 7 дней - 2000 рублей</a><br>
+							<input name="myfollow" type="radio" value="4000"><a>VIP Подписка на 31 день - 4000 рублей</a><br><br>
+							<input name="id" type="hidden" value="'.$id.'" >
+							<button type="submit" name="pay" class="pure-button pure-button-primary">Перейти к оплате</button>
+						  </fieldset>
+					  	 </form>';
 
 					   $this->db->query("DELETE FROM `follow` WHERE `id` = $idfollow");
 					   $this->db->query("UPDATE `users` SET `id_follow` = 0 WHERE `id` = $id");
@@ -419,7 +407,12 @@
 			   $out_summ = "".intval($sum)."";
 			   $crc = md5("$mrh_login:$out_summ:$inv_id:$mrh_pass1");
 
-			   include "html/button.php";
+			   return "<html><script language=JavaScript ".
+				   "src='https://auth.robokassa.ru/Merchant/PaymentForm/FormMS.js?".
+				   "MerchantLogin=$mrh_login&OutSum=$out_summ&InvoiceID=$inv_id".
+				   "&Description=$inv_desc&SignatureValue=$crc'></script></html>
+				   <br><input class='button-warning pure-button' onclick='window.history.back();' type='button' value='Вернуться'/>
+				   ";
 		   }
 
 	 		/**

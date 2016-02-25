@@ -39,11 +39,31 @@
 				<?php endif; ?>
 				<a href="faq"><div class = "button header-button-right"><span class = "center">FAQ</span></div></a>
 			</div>
+=======
+		<a href="main">
+			<div id = "logo"></div>
+			<div id = "title">HockeyBets</div>
+		</a>
+		<div id = "buttons">
+			<a href="news"><div class = "button"><span class = "center">Новости</span> </div></a>
+			<a href="statistics"><div class = "button"><span class = "center">Статистика</span></div></a>
+			<a href="aboutus"><div class = "button"><span class = "center">О нас</span></div></a>
+			<a href="faq"><div class = "button"><span class = "center">FAQ</span></div></a>
+			<?php if(Validate::UserStatus() == false): ?>
+			<a href="login"><div class = "button"><span class = "center">Войти</span></div></a>
+			<?php else: ?>
+			<a href="profile"><div class = "button"><span class = "center">Профиль</span></div></a>
+			<?php endif; ?>
+>>>>>>> origin/hockeybets
 		</div>
 	</div>
 </div>
 <div id = "content">
+<<<<<<< HEAD
 	<div id = "content-inner">
+=======
+
+>>>>>>> origin/hockeybets
 		<?php if(Validate::UserStatus() == true): ?>			
 			<?php include_once 'admin/menu.tpl.php'; ?>
 		<?php endif; ?>
