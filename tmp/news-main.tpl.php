@@ -11,18 +11,17 @@ if(isset($_SESSION['idnews']))
 
 <?php if(Route::dispatcher() == "gen-news"): ?>
     <?php $result1 = $data->gennews(0);  ?>
-    <div>Новости</div><br><br>
-    <div><?=$result1;?></div><br>
-    <div> <a href="/main">Назад</a> </div><br>
-    <div>Или</div><br>
-    <br><input class="button-warning pure-button" onclick="window.history.back();" type="button" value="Вернуться"/>
+    <div class = "news-page-title">Новости</div>
+    <div><?=$result1;?></div>
+	<div class = "clear"></div>
+    
 <?php elseif(Route::dispatcher() == "view-news"): ?>
-    <?php $result = $data->viewnews($idnews);  ?>
-    <br><input class="button-warning pure-button" onclick="window.history.back();" type="button" value="Вернуться"/>
-    <div><?=$result;?></div><br>
+	<?php $result = $data->viewnews($idnews);  ?>
+	<?=$result;?>
+
 <?php else: ?>
-    <?php $result1 = $data->gennews(10);  ?>
-    <div>Новости</div><br><br>
-    <div><?=$result1;?></div><br>
-    <div> <a href="gen-news">Читать полностью</a> </div>
+    <?php $result1 = $data->gennews(6);  ?>
+    <a class = "read-all-news" href="gen-news"><div class = "news-page-title">Новости</div></a>
+	<?=$result1;?>
+	<div class = "clear"></div>
 <?php endif; ?>

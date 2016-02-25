@@ -1,0 +1,93 @@
+#login-form{
+	
+	margin:100px auto;
+	width:300px;
+}
+
+.ui-button{
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+         -o-user-select: none;
+            user-select: none;
+	width:300px;
+	position:inherit;
+}
+
+.login-button{
+	margin-top:10px;
+	width:140px;
+	font-size:14px;
+	color:#D3D3D3;
+}
+
+.login-bigbutton{
+	margin-top:10px;
+	width:300px;
+	font-size:14px;
+	color:#D3D3D3;
+}
+
+.login-button:hover{
+	color:#3d74a6;
+}
+
+
+.login-bigbutton:hover{
+	color:#3d74a6;
+}
+
+.login-submit{
+	width:300px;
+	margin-top:5px;
+	color:#3d74a6
+}
+
+.textfield{
+	font-size:100%;
+	border:1px solid #D3D3D3;
+	border-radius:3px;
+	width:300px;
+	margin-top:5px;
+	margin-bottom:10px;
+}
+
+.ui-state-active{
+	
+	color: #3d74a6;
+}
+
+.recover-button{
+	float:left;
+	
+}
+
+.signup-button{
+	float:right;
+}
+
+.login-label{
+	
+	display:none;
+	color:red;
+	
+}
+
+.radio-button{
+	width:146px;
+	font-size:14px;
+}
+
+.profile-button{
+	width:300px;
+	margin-top:5px;
+	color:#3d74a6
+}
+
+#exit-button{
+	
+	color:red;
+}
+
