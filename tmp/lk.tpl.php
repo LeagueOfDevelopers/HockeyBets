@@ -15,20 +15,27 @@ if($result2){
     $result3 = $data->showFollow($result->id_follow);
 }
 $today = date('Y-m-d');
+
 if($result->id_follow !=0){
     if($result->data_finish<=$today) {
         $status = "VIP";
+
     }
     else{
         $status = "Обыватель";
+        $finish = "Увы, но подписка закончилась";
     }
 }
 else{
     $status = "Обыватель";
+    $finish = " Увы, но подписка закончилась";
 }
 ?>
 <div style="background-color:  #0A455C; width:400px; height:300px; position:absolute; left:20%; top:25%;">
 <H2 style="color: white; padding-left: 50px; padding-top: 30px; font-family: cursive; "><?=$result->name;?></H2>
 <p style="color: white; padding-left: 50px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 18px; " >Текущий статус: <a style="color: #53DF00;" ><?=$status?></a></p>
+
+<p style="color: white; padding-left: 50px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 18px; " >Страна: <a style="color: white; font-weight: 600;" ><?=$result->country?></a></p>
+
 
 </div>

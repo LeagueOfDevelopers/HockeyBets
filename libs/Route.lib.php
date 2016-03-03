@@ -236,6 +236,9 @@ class Route {
 				case "admin":
 					return "admin";
 					break;
+				case "lk":
+					return "lk";
+					break;
 				case "logout":
 					self::location($stringurl, 1);
 					$data->logout();

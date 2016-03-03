@@ -80,6 +80,8 @@
 			<?php elseif(Route::dispatcher() == "editnews"):?>
 				<?php include_once 'admin/edit-news.tpl.php';	?>
 			<?php elseif(Route::dispatcher() == "profile"):?>
+				<?php include_once 'profile.tpl.php';	?>
+			<?php elseif(Route::dispatcher() == "lk"):?>
 				<?php include_once 'lk.tpl.php';	?>
 			<?php elseif(Route::dispatcher() == "users"):?>	
 				<?php include_once 'users.tpl.php'; ?>
@@ -92,8 +94,9 @@
 			<?php elseif(route::dispatcher()=="gen-news"):?>
 				<?php include_once 'news-main.tpl.php'; ?>
 			<?php endif; ?>
-		<?php endif; ?>	
-		
+		<?php endif; ?>
+
+
 </div>
 
 <div id = "footer">
