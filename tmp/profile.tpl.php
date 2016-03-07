@@ -90,9 +90,7 @@ if($result2){
 		}
 		?>
 
- <button type="submit" class="profile-button" name="profile">Изменить информацию</button>
- <a href="follow" class = "profile-button">Подписка</a>
- <a href="logout" class = "profile-button" id = "exit-button">Выход из аккаунта</a>
+ <button type="submit" class="login-button login-bigbutton" name="profile">Изменить информацию</button>
 
 </form>
 

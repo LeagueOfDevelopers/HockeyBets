@@ -233,6 +233,9 @@ class Route {
 				case "main":
 					return "main";
 					break;
+				case "lk":
+					return "lk";
+					break;
 				case "admin":
 					return "admin";
 					break;
