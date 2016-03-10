@@ -15,27 +15,39 @@ if($result2){
     $result3 = $data->showFollow($result->id_follow);
 }
 $today = date('Y-m-d');
-
 if($result->id_follow !=0){
-    if($result->data_finish<=$today) {
+    $result5 = $data->showFollow($result->id_follow);
+    if($result5->data_finish>=$today) {
         $status = "VIP";
 
+        $datafinish = $result5->data_finish;
     }
     else{
         $status = "Обыватель";
-        $finish = "Увы, но подписка закончилась";
+        $datafinish = 0;
     }
 }
 else{
     $status = "Обыватель";
-    $finish = " Увы, но подписка закончилась";
+    $datafinish = 0;
 }
+
+$result4 = $data->follow($id);
+
 ?>
-<div style="background-color:  #0A455C; width:400px; height:300px; position:absolute; left:20%; top:25%;">
-<H2 style="color: white; padding-left: 50px; padding-top: 30px; font-family: cursive; "><?=$result->name;?></H2>
-<p style="color: white; padding-left: 50px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 18px; " >Текущий статус: <a style="color: #53DF00;" ><?=$status?></a></p>
 
-<p style="color: white; padding-left: 50px; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 18px; " >Страна: <a style="color: white; font-weight: 600;" ><?=$result->country?></a></p>
-
-
+<div id= "lk" style="padding-right: 20%">
+<div id = "lk-profilebox">
+	<p id="lk-name"><?=$result->name;?></p>
+	<p>Email: <span id = "lk-status"><?=$result->email;?></span></p>
+	<p>Текущий статус: <span id = "lk-status"><?=$status?></span></p>
+	<p>Страна: <span id = "lk-status"><?=$result->country;?></span></p>
+    <?php if($datafinish != 0):?>
+    <?php echo '<p>Конец подписки: <span id = "lk-status">'.$datafinish.'</span></p>' ; ?>
+    <?php endif; ?>
+    <a id="lk-edit" href = "profile">Редактировать<a>
+	<a href="logout" class = "login-button login-bigbutton" id = "exit-button">Выход из аккаунта</a>
+</div>
+	<div ><?=$result4;?></div></br>
+	
 </div>

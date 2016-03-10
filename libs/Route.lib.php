@@ -233,11 +233,11 @@ class Route {
 				case "main":
 					return "main";
 					break;
-				case "admin":
-					return "admin";
-					break;
 				case "lk":
 					return "lk";
+					break;
+				case "admin":
+					return "admin";
 					break;
 				case "logout":
 					self::location($stringurl, 1);

@@ -1,10 +1,10 @@
 $(function() {
 	
-			function enableSubmit(){
+			/*function enableSubmit(){
 				if($emailStatus && $passwordStatus)
 					$(".login-submit").button("enable");
 				
-			};
+			};*/
 	
 	
 	
@@ -14,7 +14,7 @@ $(function() {
 			$(".datepicker").datepicker("option", "dateFormat", "yy-mm-dd");
 			$( ".login-button, .login-bigbutton, .login-submit, .admin-button, .profile-button" )
 				.button();
-			$(".login-submit").button("disable");
+			//$(".login-submit").button("disable");
 			$emailStatus = false;
 			$passwordStatus = false;
 			$(".error").dialog();	
@@ -28,7 +28,7 @@ $(function() {
 				}else{
 					$emailStatus = true;
 					$("#email").css({'border-color':'green'});
-					enableSubmit();
+					//enableSubmit();
 				}
 			});
 
@@ -42,7 +42,7 @@ $(function() {
 				}else{
 					$passwordStatus = true;
 					$("#password").css({'border-color':'green'});
-					enableSubmit();
+					//enableSubmit();
 				}
 			})
 		});

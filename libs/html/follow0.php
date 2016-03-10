@@ -6,11 +6,11 @@ echo '
 <br>
 <div id = "lk-followbox" >
 	<form method="post">
-	<div>Ваша предыдущая подпсика подошла к концу, оформите новую и будьте в курсе всех новых ставок</div><br>
+	<div> Вы еще не оформили подписку! Выберете одну из них!</div><br>
 		<div class = "lk-follow-choise" style="text-align: center;">
 			<div class = "lk-follow-time">День </div>
 			<div class= "lk-follow-cost"> 500 рублей </div>
-			<div > <input name="myfollow" type="radio" value="500"  checked="checked";></div>
+			<div > <input name="myfollow" type="radio" value="500" checked="checked";></div>
 
 		</div>
 		<div class = "lk-follow-choise" style="text-align: center;">
@@ -22,10 +22,9 @@ echo '
 		<div class = "lk-follow-choise" style="text-align: center;">
 			<div class = "lk-follow-time">Месяц</div>
 			<div class= "lk-follow-cost"> 4000 рублей </div>
-			<div style="text-align: center;"><input name="myfollow" type="radio" value="4000"></div>
+			<div style="text-align: center;"><input name="myfollow" type="radio" value="4000" ></div>
 		</div>
 		<input name="id" type="hidden" value="'.$id.'" >
-
 		<div style="text-align: center;"> <input type = "submit" name="pay" class = "login-button" value= "Купить"/></div>
 	</form>
 </div>';

@@ -17,32 +17,35 @@
 }
 
 .login-button{
+	color:white;
+	background-image:none;
+	background-color:red;
 	margin-top:10px;
 	width:140px;
 	font-size:14px;
-	color:#D3D3D3;
 }
 
 .login-bigbutton{
 	margin-top:10px;
 	width:300px;
 	font-size:14px;
-	color:#D3D3D3;
 }
 
 .login-button:hover{
-	color:#3d74a6;
+	color:#122333;
 }
 
 
 .login-bigbutton:hover{
-	color:#3d74a6;
+	color:#122333;
 }
 
 .login-submit{
 	width:300px;
 	margin-top:5px;
-	color:#3d74a6
+	color:white;
+	background-image:none;
+	background-color:red;
 }
 
 .textfield{
@@ -56,7 +59,8 @@
 
 .ui-state-active{
 	
-	color: #3d74a6;
+	color: #122333;
+	background:red;
 }
 
 .recover-button{
@@ -75,19 +79,19 @@
 	
 }
 
+.checkbox
+{
+	width:20px;
+	height:20px;
+	
+}
+
+
+
 .radio-button{
 	width:146px;
 	font-size:14px;
 }
 
-.profile-button{
-	width:300px;
-	margin-top:5px;
-	color:#3d74a6
-}
 
-#exit-button{
-	
-	color:red;
-}
 

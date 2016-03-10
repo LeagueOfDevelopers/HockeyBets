@@ -20,25 +20,30 @@
 <body>
 <div id = "header">
 	<div id = "menu">
-		<a href="main">
-			<div id = "logo"></div>
-			<div id = "title">HockeyBets</div>
-		</a>
+		
 		<div id = "buttons">
-			<a href="news"><div class = "button"><span class = "center">Новости</span> </div></a>
-			<a href="statistics"><div class = "button"><span class = "center">Статистика</span></div></a>
-			<a href="aboutus"><div class = "button"><span class = "center">О нас</span></div></a>
-			<a href="faq"><div class = "button"><span class = "center">FAQ</span></div></a>
-			<?php if(Validate::UserStatus() == false): ?>
-			<a href="login"><div class = "button"><span class = "center">Войти</span></div></a>
-			<?php else: ?>
-			<a href="profile"><div class = "button"><span class = "center">Профиль</span></div></a>
-			<?php endif; ?>
+			<div>
+				<a href="news"><div class = "button header-button-left"><span class = "center">Новости</span> </div></a>
+				<a href="statistics"><div class = "button header-button-left"><span class = "center">Статистика</span></div></a>
+				<a href="aboutus"><div class = "button header-button-left"><span class = "center">О нас</span></div></a>
+			</div>
+			<a href="main"><div class = "logo">
+				Hockey Bets
+			</div></a>
+			<div>
+				
+				<?php if(Validate::UserStatus() == false): ?>
+				<a href="login"><div class = "button header-button-right"><span class = "center">Войти</span></div></a>
+				<?php else: ?>
+				<a href="lk"><div class = "button header-button-right header-big-button"><span class = "center">Личный кабинет</span></div></a>
+				<?php endif; ?>
+				<a href="faq"><div class = "button header-button-right"><span class = "center">FAQ</span></div></a>
+			</div>
 		</div>
 	</div>
 </div>
 <div id = "content">
-
+	<div id = "content-inner">
 		<?php if(Validate::UserStatus() == true): ?>			
 			<?php include_once 'admin/menu.tpl.php'; ?>
 		<?php endif; ?>
@@ -65,6 +70,8 @@
 		
 			<?php if(route::dispatcher()=="follow"):?>
 				<?php include_once 'follow.tpl.php'; ?>
+			<?php elseif(route::dispatcher()=="lk"):?>
+				<?php include_once 'lk.tpl.php'; ?>
 			<?php elseif(route::dispatcher()=="news"):?>
 				<?php include_once 'news.tpl.php'; ?>
 			<?php elseif(route::dispatcher()=="vip-news"):?>
@@ -81,8 +88,6 @@
 				<?php include_once 'admin/edit-news.tpl.php';	?>
 			<?php elseif(Route::dispatcher() == "profile"):?>
 				<?php include_once 'profile.tpl.php';	?>
-			<?php elseif(Route::dispatcher() == "lk"):?>
-				<?php include_once 'lk.tpl.php';	?>
 			<?php elseif(Route::dispatcher() == "users"):?>	
 				<?php include_once 'users.tpl.php'; ?>
 			<?php endif; ?>
@@ -94,15 +99,16 @@
 			<?php elseif(route::dispatcher()=="gen-news"):?>
 				<?php include_once 'news-main.tpl.php'; ?>
 			<?php endif; ?>
-		<?php endif; ?>
-
-
+		<?php endif; ?>	
+	</div>
 </div>
+
+
 
 <div id = "footer">
 	<div id="footer-content">
-		&copy; <?=date('Y');?> HockeyBets.ru
-		<div id="lodlogo">
+		&copy
+		<a href = "http://lod-misis.ru/" ><div id="lodlogo"></a>
 		
 		</div>
 	</div>
